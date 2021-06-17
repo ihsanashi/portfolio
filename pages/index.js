@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Layout from '../src/components/Layout/index';
 
 export default function Home() {
@@ -11,7 +10,6 @@ export default function Home() {
           name='description'
           content='Ahmad Ihsan is a self taught Developer based in Kuala Lumpur, Malaysia. He focuses on front-end technologies such as Javascript, React and Next.js. He is also very into headless CMS and the JAMstack.'
         />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <Layout>
