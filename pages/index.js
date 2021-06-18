@@ -15,7 +15,7 @@ export default function Home() {
       {/* begin: Layout component */}
       <Layout>
         {/* begin: main wrapper */}
-        <main>
+        <main className='flex flex-col'>
           {/* begin: container */}
           <div className='container'>
             {/* begin: hero section */}
@@ -34,6 +34,19 @@ export default function Home() {
               </div>
             </section>
             {/* end: hero section */}
+            {/* begin: project carousel */}
+            <section className='my-36'>
+              {/* begin: scroll container */}
+              <div className=''>
+                <div className='flex flex-row overscroll-x-contain'>
+                  <article className='w-96'>Hello</article>
+                  <article className='w-96'>there</article>
+                  <article className='w-96'>there</article>
+                </div>
+              </div>
+              {/* end: scroll container */}
+            </section>
+            {/* end: project carousel */}
           </div>
           {/* end: container */}
         </main>
