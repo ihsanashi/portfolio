@@ -44,16 +44,16 @@ export default function ContactPage() {
                 </h6>
               </div>
               <div className='mt-14 flex flex-row justify-center items-center'>
-                <div className='border rounded-md overflow-hidden flex flex-row'>
+                <div className='flex flex-row'>
                   <input
-                    className='py-3 px-5'
+                    className='px-5 py-3 border border-gray-200 rounded-l-md overflow-hidden'
                     type='text'
                     value='hello@ahmadihsan.com'
                     ref={emailRef}
                     readOnly
                   />
                   <button
-                    className='bg-primary-500 text-white rounded-r-md flex flex-row items-center px-5 py-3'
+                    className='px-5 py-3 bg-primary-500 text-white rounded-r-md flex flex-row items-center'
                     onClick={copyToClipboard}
                   >
                     <BiCopy size={16} />
@@ -142,7 +142,7 @@ export default function ContactPage() {
                     </label>
                   </div>
                   <div className='flex justify-end mt-12'>
-                    <button className='text-white bg-blue-500 hover:bg-blue-600 rounded-md px-6 py-3'>
+                    <button className='px-6 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-md'>
                       Submit
                     </button>
                   </div>
