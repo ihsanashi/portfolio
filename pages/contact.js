@@ -12,10 +12,8 @@ export default function ContactPage() {
     document.execCommand('copy');
     e.target.focus();
     setIsCopied(true);
-    console.log(emailRef);
 
     setTimeout((e) => {
-      console.log(emailRef.current);
       setIsCopied(false);
     }, 2000);
   }
@@ -26,11 +24,14 @@ export default function ContactPage() {
         <title>Contact | Ahmad Ihsan</title>
         <meta name='description' content='Contact Ahmad Ihsan' />
       </Head>
+      {/* begin: Layout component */}
       <Layout>
-        <section className='flex flex-col'>
+        {/* begin: main wrapper */}
+        <main className='flex flex-col'>
+          {/* begin: container */}
           <div className='container'>
             {/* begin: hero */}
-            <div className='max-w-lg mx-auto my-36 text-center'>
+            <section className='max-w-lg mx-auto my-36 text-center'>
               <div>
                 <h6 className='text-primary-500 text-xl uppercase'>Contact</h6>
                 <h1 className='text-5xl font-sans font-bold pt-3 pb-5'>
@@ -65,15 +66,15 @@ export default function ContactPage() {
                   Copied to clipboard!
                 </p>
               )}
-            </div>
+            </section>
             {/* end: hero */}
             {/* begin: separator */}
-            <div className='max-w-lg mx-auto my-36 text-center'>
+            <section className='max-w-lg mx-auto my-36 text-center'>
               <div className='w-32 border-t-2 border-primary-100 mx-auto'></div>
-            </div>
+            </section>
             {/* end: separator */}
             {/* begin: contact form */}
-            <div className='max-w-lg mx-auto my-36'>
+            <section className='max-w-lg mx-auto my-36'>
               <div className='text-center mb-24'>
                 <h3 className='font-bold font-sans text-3xl text-primary-500'>
                   Drop me a line
@@ -147,11 +148,14 @@ export default function ContactPage() {
                   </div>
                 </form>
               </div>
-            </div>
+            </section>
             {/* end: contact form */}
           </div>
-        </section>
+          {/* end: container */}
+        </main>
+        {/* end: main wrapper */}
       </Layout>
+      {/* end: Layout component */}
     </>
   );
 }
