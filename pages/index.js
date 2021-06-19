@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout from '../src/components/Layout/index';
-import Slider from '../src/components/ProjectSlider/Slider';
 import { useQuery } from '@apollo/client';
 import { GET_HOME_DATA } from '../lib/queries/homepageData';
 
@@ -43,7 +42,7 @@ export default function Home() {
             <section className='my-36'>
               {/* begin: scroll container */}
               <div className='flex flex-nowrap overflow-x-auto no-scrollbar'>
-                <Slider />
+                {/* Projects slider here */}
               </div>
               {/* end: scroll container */}
             </section>
