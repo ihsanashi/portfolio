@@ -1,15 +1,20 @@
 import Head from 'next/head';
 import Layout from '../src/components/Layout/index';
+import Slider from '../src/components/ProjectSlider/Slider';
+import { useQuery } from '@apollo/client';
+import { GET_HOME_DATA } from '../lib/queries/homepageData';
 
 export default function Home() {
+  const { loading, error, data } = useQuery(GET_HOME_DATA);
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
   return (
     <>
       <Head>
         <title>Home | Ahmad Ihsan - Software Developer</title>
-        <meta
-          name='description'
-          content='Ahmad Ihsan is a self taught Developer based in Kuala Lumpur, Malaysia. He focuses on front-end technologies such as Javascript, React and Next.js. He is also very into headless CMS and the JAMstack.'
-        />
+        <meta name='description' content={data.Home.description} />
       </Head>
 
       {/* begin: Layout component */}
@@ -37,12 +42,8 @@ export default function Home() {
             {/* begin: project carousel */}
             <section className='my-36'>
               {/* begin: scroll container */}
-              <div className=''>
-                <div className='flex flex-row overscroll-x-contain'>
-                  <article className='w-96'>Hello</article>
-                  <article className='w-96'>there</article>
-                  <article className='w-96'>there</article>
-                </div>
+              <div className='flex flex-nowrap overflow-x-auto no-scrollbar'>
+                <Slider />
               </div>
               {/* end: scroll container */}
             </section>
