@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -16,6 +18,9 @@ module.exports = {
     fontFamily: {
       sans: ['Barlow', 'sans-serif'],
       serif: ['Spectral', 'serif'],
+    },
+    flex: {
+      '0-0-auto': '0 0 auto',
     },
     extend: {
       colors: {
@@ -49,5 +54,18 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.no-scrollbar': {
+          '::webkitScrollbar': 'none',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        },
+      };
+
+      addUtilities(newUtilities);
+    }),
+  ],
 };
