@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { PROJECT_DATA } from '../../lib/queries/dynamicProjectData';
 import BlockContent from '@sanity/block-content-to-react';
+import { BiLink, BiCaretRight } from 'react-icons/bi';
+import moment from 'moment';
 
 export default function DynamicProjectPage() {
   const router = useRouter();
@@ -34,62 +36,52 @@ export default function DynamicProjectPage() {
           {/* begin: hero */}
           <section className='my-36'>
             <div className='container'>
-              <div className='max-w-3xl mx-auto'>
-                <div className='flex flex-row justify-end items-end flex-nowrap'>
-                  <div className='h-[360px] w-[780px] md:relative'>
-                    <div>
-                      <Image
-                        src={project.image.asset.url}
-                        layout='responsive'
-                        height={360}
-                        width={780}
-                      />
-                    </div>
-                    <div className='z-10 md:absolute -bottom-14 -left-24'>
-                      <div className='border border-gray-100 bg-white p-7.5'>
-                        <h3 className='text-3xl font-serif font-medium text-gray-800'>
-                          {project.title}
-                        </h3>
-                        <p className='mt-2.5 text-base font-sans font-normal text-gray-600'>
-                          {project.summary}
-                        </p>
-                      </div>
-                    </div>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-x-7.5'>
+                <div className='font-sans'>
+                  <h2 className='text-3xl md:text-4xl lg:text-5xl font-medium text-gray-800'>
+                    {project.title}
+                  </h2>
+                  <h4 className='mt-5 text-lg md:text-xl lg:text-2xl font-normal text-gray-600'>
+                    {project.summary}
+                  </h4>
+                  <div className='inline-flex flex-row items-center justify-start border-b border-accent-400 pb-4 mt-10 mb-7.5'>
+                    <BiLink size={20} />
+                    <h6 className='ml-2.5 font-medium text-xl uppercase tracking-widest'>
+                      Links
+                    </h6>
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          {/* end: hero */}
-          {/* begin: links */}
-          <section className='my-12'>
-            <div className='container'>
-              <div className='max-w-2xl mx-auto'>
-                <div>
-                  <h6 className='font-medium text-xl uppercase tracking-widest'>
-                    Links
-                  </h6>
-                </div>
-                <div className='mt-7.5 max-w-xs'>
-                  <ul className='list-none grid grid-cols-2'>
+                  <ul className='flex flex-col'>
                     {project.links.map((item) => (
                       <a
                         key={item._key}
                         href={item.link}
                         target='_blank'
-                        className='text-center mx-4 px-5 py-3 bg-none hover:bg-gray-200 hover:cursor-pointer rounded-md'
+                        className='mb-5 inline-flex flex-row items-center'
                       >
-                        <li>{item.title}</li>
+                        <BiCaretRight size={16} />
+                        <li className='list-item list-none ml-1.5'>
+                          {item.title}
+                        </li>
                       </a>
                     ))}
                   </ul>
                 </div>
+                <div className='relative'>
+                  <Image
+                    src={project.image.asset.url}
+                    layout='responsive'
+                    objectFit='cover'
+                    height={400}
+                    width={710}
+                  />
+                </div>
               </div>
             </div>
           </section>
-          {/* end: links */}
+          {/* end: hero */}
+
           {/* begin: content */}
-          <section className='my-36'>
+          <section className='mt-36'>
             <div className='bg-gray-50'>
               <div className='container'>
                 <div className='max-w-3xl mx-auto'>
@@ -101,6 +93,58 @@ export default function DynamicProjectPage() {
             </div>
           </section>
           {/* end: content */}
+
+          {/* begin: misc details */}
+          <section className='mb-12'>
+            <div className='bg-gray-900 px-12 py-24'>
+              <div className='container'>
+                <h4 className='text-xl lg:text-2xl text-gray-200 font-medium mb-7.5'>
+                  Miscellaneous details
+                </h4>
+                <ul className='grid grid-cols-2 lg:grid-cols-4'>
+                  <li>
+                    <p className='text-base text-gray-100 font-normal mb-2.5'>
+                      Stack
+                    </p>
+                    <h6 className='text-lg text-white font-normal'>
+                      {project.technologies.join(', ')}
+                    </h6>
+                  </li>
+                  <li>
+                    <p className='text-base text-gray-100 font-normal mb-2.5'>
+                      Tags
+                    </p>
+                    <h6 className='text-lg text-white font-normal'>
+                      {project.tags.join(', ')}
+                    </h6>
+                  </li>
+                  <li>
+                    <p className='text-base text-gray-100 font-normal mb-2.5'>
+                      Duration
+                    </p>
+                    <h6 className='text-lg text-white font-normal'>
+                      {project.completed
+                        ? `${moment(project.startDate).format(
+                            'Do MMM YYYY'
+                          )} — ${moment(project.finishDate).format(
+                            'Do MMM YYYY'
+                          )}`
+                        : 'Ongoing'}
+                    </h6>
+                  </li>
+                  <li>
+                    <p className='text-base text-gray-100 font-normal mb-2.5'>
+                      Last updated
+                    </p>
+                    <h6 className='text-lg text-white font-normal'>
+                      {`${moment(project._updatedAt).format('Do MMM YYYY')}`}
+                    </h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          {/* end: misc details */}
         </main>
         {/* end: main wrapper */}
       </Layout>
