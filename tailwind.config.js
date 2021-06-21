@@ -16,13 +16,22 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Barlow', 'sans-serif'],
+      sans: ['Mukta', 'sans-serif'],
       serif: ['Spectral', 'serif'],
     },
     flex: {
       '0-0-auto': '0 0 auto',
+      1: '1 1 0%',
+      auto: '1 1 auto',
+      initial: '0 1 auto',
+      inherit: 'inherit',
+      none: 'none',
+      2: '2 2 0%',
     },
     extend: {
+      spacing: {
+        7.5: '1.875rem',
+      },
       colors: {
         primary: {
           50: '#e2f2ff',
@@ -37,6 +46,7 @@ module.exports = {
           900: '#000d1c',
         },
         accent: {
+          25: '#fffceb',
           50: '#fffadb',
           100: '#fff0af',
           200: '#ffe67e',
@@ -52,7 +62,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      translate: ['active', 'group-hover'],
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
