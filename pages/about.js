@@ -17,11 +17,11 @@ export default function AboutPage() {
             {/* begin: hero */}
             <section className='my-36 grid grid-cols-12 gap-5'>
               <div className='col-span-5 pt-3'>
-                <h6 className='text-xl uppercase font-medium font-sans mb-5'>
+                <h6 className='text-xl uppercase font-medium font-sans mb-5 tracking-wider'>
                   About
                 </h6>
-                <h2 className='font-serif font-bold text-5xl text-accent-400'>
-                  Ahmad <span className='text-primary-500'>Ihsan</span>
+                <h2 className='font-serif font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300'>
+                  Ahmad Ihsan
                 </h2>
               </div>
               <div className='col-span-7'>

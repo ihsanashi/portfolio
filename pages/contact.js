@@ -34,7 +34,7 @@ export default function ContactPage() {
             <section className='max-w-lg mx-auto my-36 text-center'>
               <div>
                 <h6 className='text-primary-500 text-xl uppercase'>Contact</h6>
-                <h1 className='text-5xl font-sans font-bold pt-3 pb-5'>
+                <h1 className='text-5xl font-serif font-bold pt-3 pb-5'>
                   Get in touch.
                 </h1>
                 <h6 className='text-gray-800 text-xl'>
@@ -76,7 +76,7 @@ export default function ContactPage() {
             {/* begin: contact form */}
             <section className='max-w-lg mx-auto my-36'>
               <div className='text-center mb-24'>
-                <h3 className='font-bold font-sans text-3xl text-primary-500'>
+                <h3 className='font-bold font-serif text-3xl text-primary-500'>
                   Drop me a line
                 </h3>
                 <h6 className='font-sans text-xl text-gray-700 mt-5'>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                     </label>
                   </div>
                   <div className='flex justify-end mt-12'>
-                    <button className='px-6 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-md'>
+                    <button className='px-6 py-3 text-primary-500 hover:text-white bg-white hover:bg-primary-500 border border-primary-500 rounded-md'>
                       Submit
                     </button>
                   </div>
