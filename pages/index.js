@@ -64,7 +64,7 @@ export default function Home() {
                         <h3 className='text-2xl font-semibold'>
                           {project.title}
                         </h3>
-                        <p className='mt-[10px] mb-[30px] font-normal text-base text-gray-600 leading-normal'>
+                        <p className='mt-2.5 mb-7.5 font-normal text-base text-gray-600 leading-normal'>
                           {project.summary}
                         </p>
                         {project.links.length <= 2 && (
