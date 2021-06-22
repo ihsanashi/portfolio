@@ -7,9 +7,9 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <div className='sticky top-0 left-0 z-40 flex flex-none w-full py-4 mx-auto bg-white shadow-sm'>
+    <nav className='sticky top-0 left-0 z-40 flex flex-none w-full py-4 mx-auto bg-white shadow-sm'>
       <div className='container'>
-        <nav className='flex items-center justify-between flex-none'>
+        <section className='flex items-center justify-between flex-none'>
           <div className='flex-none'>
             <Link href='/'>
               <a>
@@ -56,8 +56,8 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-        </nav>
+        </section>
       </div>
-    </div>
+    </nav>
   );
 }
