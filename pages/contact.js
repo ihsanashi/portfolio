@@ -29,33 +29,33 @@ export default function ContactPage() {
         {/* begin: container */}
         <div className='container'>
           {/* begin: hero */}
-          <section className='max-w-lg mx-auto my-36 text-center'>
+          <section className='max-w-lg mx-auto text-center my-36'>
             <div>
-              <h6 className='text-primary-500 text-xl uppercase'>Contact</h6>
-              <h1 className='text-5xl font-serif font-bold pt-3 pb-5'>
+              <h6 className='text-xl uppercase text-primary-500'>Contact</h6>
+              <h1 className='pt-3 pb-5 font-serif text-5xl font-bold'>
                 Get in touch.
               </h1>
-              <h6 className='text-gray-800 text-xl'>
+              <h6 className='text-xl text-gray-800'>
                 Connect with me through my socials or use the contact form
                 below. If you prefer writing emails, there's an option
                 underneath here too.
               </h6>
             </div>
-            <div className='mt-14 flex flex-row justify-center items-center'>
+            <div className='flex flex-row items-center justify-center mt-14'>
               <div className='flex flex-row'>
                 <input
-                  className='px-5 py-3 border border-gray-200 rounded-l-md overflow-hidden'
+                  className='px-5 py-3 overflow-hidden border border-gray-200 rounded-l-md'
                   type='text'
                   value='hello@ahmadihsan.com'
                   ref={emailRef}
                   readOnly
                 />
                 <button
-                  className='px-5 py-3 bg-primary-500 text-white rounded-r-md flex flex-row items-center'
+                  className='flex flex-row items-center px-5 py-3 text-white transition duration-500 ease-in-out bg-primary-400 hover:bg-primary-600 rounded-r-md'
                   onClick={copyToClipboard}
                 >
                   <BiCopy size={16} />
-                  <p className='ml-1'>Copy</p>
+                  <p className='ml-1 text-white'>Copy</p>
                 </button>
               </div>
             </div>
@@ -67,17 +67,17 @@ export default function ContactPage() {
           </section>
           {/* end: hero */}
           {/* begin: separator */}
-          <section className='max-w-lg mx-auto my-36 text-center'>
-            <div className='w-32 border-t-2 border-primary-100 mx-auto'></div>
+          <section className='max-w-lg mx-auto text-center my-36'>
+            <div className='w-32 mx-auto border-t-2 border-primary-100'></div>
           </section>
           {/* end: separator */}
           {/* begin: contact form */}
           <section className='max-w-lg mx-auto my-36'>
-            <div className='text-center mb-24'>
-              <h3 className='font-bold font-serif text-3xl text-primary-500'>
+            <div className='mb-24 text-center'>
+              <h3 className='font-serif text-3xl font-bold text-primary-500'>
                 Drop me a line
               </h3>
-              <h6 className='font-sans text-xl text-gray-700 mt-5'>
+              <h6 className='mt-5 font-sans text-xl text-gray-700'>
                 I typically reply within 2 days. If it’s anything urgent, send
                 me a quick message on my socials!
               </h6>
@@ -87,24 +87,24 @@ export default function ContactPage() {
                 <div className='grid grid-cols-2 gap-x-6 my-7'>
                   <div>
                     <label className='block'>
-                      <span className='text-gray-700 font-medium text-base'>
+                      <span className='text-base font-medium text-gray-700'>
                         Full name
                       </span>
                       <input
                         type='text'
-                        className='mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+                        className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                         placeholder='Obi-Wan Kenobi'
                       />
                     </label>
                   </div>
                   <div>
                     <label className='block'>
-                      <span className='text-gray-700 font-medium text-base'>
+                      <span className='text-base font-medium text-gray-700'>
                         Email address
                       </span>
                       <input
                         type='email'
-                        className='mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+                        className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                         placeholder='obi@therepublic.com'
                       />
                     </label>
@@ -112,35 +112,35 @@ export default function ContactPage() {
                 </div>
                 <div className='grid grid-cols-1 my-7'>
                   <label className='block'>
-                    <span className='text-gray-700 font-medium text-base'>
+                    <span className='text-base font-medium text-gray-700'>
                       Subject
                     </span>
                     <input
                       type='text'
-                      className='mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+                      className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                       placeholder='The Death Star Initiative'
                     />
                   </label>
                 </div>
                 <div className='grid grid-cols-1 my-7'>
                   <label className='block'>
-                    <div className='flex flex-row justify-between items-center'>
-                      <span className='text-gray-700 font-medium text-base'>
+                    <div className='flex flex-row items-center justify-between'>
+                      <span className='text-base font-medium text-gray-700'>
                         Message
                       </span>
-                      <span className='text-gray-500 font-normal text-sm'>
+                      <span className='text-sm font-normal text-gray-500'>
                         Max. 500 characters
                       </span>
                     </div>
                     <textarea
-                      className='mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+                      className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                       rows='3'
                       placeholder='Dear General Organa...'
                     ></textarea>
                   </label>
                 </div>
                 <div className='flex justify-end mt-12'>
-                  <button className='px-6 py-3 text-primary-500 hover:text-white bg-white hover:bg-primary-500 border border-primary-500 rounded-md'>
+                  <button className='px-6 py-3 transition duration-500 ease-in-out bg-white border rounded-md text-primary-500 hover:text-white hover:bg-primary-500 border-primary-500'>
                     Submit
                   </button>
                 </div>
