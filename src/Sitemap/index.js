@@ -10,6 +10,11 @@ export const Sitemap = [
     link: '/projects',
   },
   {
+    id: 'blog',
+    title: 'Blog',
+    link: '/blog',
+  },
+  {
     id: 'about',
     title: 'About',
     link: '/about',
