@@ -3,14 +3,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../src/components/Layout/index';
 import { useQuery } from '@apollo/client';
-import { GET_PROJECTS } from '../lib/queries/allProjectsData';
+import { GET_HOMEPAGE_DATA } from '../lib/queries/homepageData';
 import { BiRightArrowAlt } from 'react-icons/bi';
+import BlockContent from '@sanity/block-content-to-react';
 
 export default function Home() {
-  const { loading, error, data } = useQuery(GET_PROJECTS);
+  const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA);
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
+
+  const serializers = {
+    types: {
+      p: (props) => (
+        <p className='leading-relaxed font-normal text-base text-gray-700 my-7.5'>
+          {props.node.p}
+        </p>
+      ),
+    },
+  };
 
   return (
     <>
@@ -116,18 +127,15 @@ export default function Home() {
                 <h6 className='inline-block pb-1 mb-5 text-base font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400'>
                   About
                 </h6>
-                <h5 className='font-serif text-2xl font-medium text-gray-700'>
+                <h5 className='font-serif text-2xl font-medium text-gray-700 mb-7.5'>
                   Hello there, I'm Ihsan
                 </h5>
-                <p className='leading-relaxed font-normal text-base text-gray-700 my-7.5'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-                  perspiciatis aut officiis possimus nam aspernatur, maxime
-                  deserunt asperiores, similique soluta totam. Fugit
-                  necessitatibus itaque dolor sapiente, perferendis eos modi
-                  voluptate?
-                </p>
+                <BlockContent
+                  blocks={data.About.homeSummaryRaw}
+                  serializers={serializers}
+                />
                 <Link href='/about'>
-                  <a className='inline-block font-medium transition duration-500 ease-in-out transform text-primary-600 hover:text-primary-300 hover:translate-x-1'>
+                  <a className='inline-block mt-7.5 font-medium transition duration-500 ease-in-out transform text-primary-600 hover:text-primary-300 hover:translate-x-1'>
                     Read more
                   </a>
                 </Link>

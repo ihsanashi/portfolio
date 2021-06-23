@@ -1,7 +1,35 @@
 import Head from 'next/head';
 import Layout from '../src/components/Layout';
+import { useQuery } from '@apollo/client';
+import { GET_ABOUT } from '../lib/queries/aboutpageData';
+import BlockContent from '@sanity/block-content-to-react';
+import { serializers } from '@sanity/block-content-to-react/lib/targets/dom';
 
 export default function AboutPage() {
+  const { loading, error, data } = useQuery(GET_ABOUT);
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+  const BlockRenderer = (props) => {
+    const { style = 'normal' } = props.node;
+
+    if (style === 'h5') {
+      return (
+        <h5 className='font-sans text-2xl leading-relaxed text-gray-800'>
+          {props.children}
+        </h5>
+      );
+    }
+
+    if (style === 'blockquote') {
+      return <blockquote>- {props.children}</blockquote>;
+    }
+
+    // Fall back to default handling
+    return BlockContent.defaultSerializers.types.block(props);
+  };
+
   return (
     <>
       <Head>
@@ -13,29 +41,20 @@ export default function AboutPage() {
         {/* begin: container */}
         <div className='container'>
           {/* begin: hero */}
-          <section className='my-36 grid grid-cols-12 gap-5'>
+          <section className='grid grid-cols-12 gap-5 my-36'>
             <div className='col-span-5 pt-3'>
-              <h6 className='text-xl uppercase font-medium font-sans mb-5 tracking-wider'>
+              <h6 className='mb-5 font-sans text-xl font-medium tracking-wider uppercase'>
                 About
               </h6>
-              <h2 className='font-serif font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300'>
+              <h2 className='font-serif text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300'>
                 Ahmad Ihsan
               </h2>
             </div>
             <div className='col-span-7'>
-              <h5 className='text-2xl text-gray-800 font-sans leading-relaxed'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                sunt magni nam libero deleniti corrupti, porro, doloremque
-                tempore, a aliquid quam cum iure sequi itaque repellat quibusdam
-                voluptas iste facilis.
-              </h5>
-              <h5 className='text-2xl text-gray-800 font-sans leading-relaxed mt-8'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci voluptate sint soluta error dolor a ipsam ipsa,
-                quibusdam dicta necessitatibus veritatis sequi inventore
-                dolores, explicabo, quia cumque eius voluptatibus libero placeat
-                repellendus laborum? Alias, ratione architecto.
-              </h5>
+              <BlockContent
+                blocks={data.About.excerptRaw}
+                serializers={{ types: { block: BlockRenderer } }}
+              />
             </div>
           </section>
           {/* end: hero */}
@@ -47,18 +66,18 @@ export default function AboutPage() {
           {/* begin: container */}
           <div className='container'>
             {/* begin: tab group */}
-            <div className='relative top-12 z-10 h-24 bg-white border border-gray-200 rounded-md shadow-md flex items-center'>
-              <div className='grid grid-cols-3 divide-x divide-gray-200 place-items-stretch flex-1'>
+            <div className='relative z-10 flex items-center h-24 bg-white border border-gray-200 rounded-md shadow-md top-12'>
+              <div className='grid flex-1 grid-cols-3 divide-x divide-gray-200 place-items-stretch'>
                 <div className='flex items-center justify-center'>
-                  <h6 className='capitalize text-center text-xl'>Personal</h6>
+                  <h6 className='text-xl text-center capitalize'>Personal</h6>
                 </div>
                 <div className='flex items-center justify-center'>
-                  <h6 className='capitalize text-center text-xl'>
+                  <h6 className='text-xl text-center capitalize'>
                     Work Experience
                   </h6>
                 </div>
                 <div className='flex items-center justify-center'>
-                  <h6 className='capitalize text-center text-xl'>Skills</h6>
+                  <h6 className='text-xl text-center capitalize'>Skills</h6>
                 </div>
               </div>
             </div>
@@ -67,10 +86,10 @@ export default function AboutPage() {
           {/* end: container */}
           {/* end: tabbar */}
           {/* begin: content */}
-          <div className='bg-primary-800 h-96 flex flex-col justify-center items-center'>
+          <div className='flex flex-col items-center justify-center bg-primary-800 h-96'>
             {/* begin: container */}
             <div className='container'>
-              <h1 className='text-4xl text-white text-center'>
+              <h1 className='text-4xl text-center text-white'>
                 Sanity content here
               </h1>
             </div>
