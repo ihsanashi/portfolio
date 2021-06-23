@@ -11,11 +11,23 @@ export default function AboutPage() {
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 
+  const {
+    _updatedAt,
+    homeSummaryRaw,
+    excerptRaw,
+    personalBodyRaw,
+    description,
+    workExperience,
+    skills,
+  } = data.About;
+
+  // console.log(description);
+
   return (
     <>
       <Head>
         <title>About | Ahmad Ihsan</title>
-        <meta name='description' content='Learn more about Ahmad Ihsan' />
+        <meta name='description' content={description} />
       </Head>
       {/* begin: Layout component */}
       <Layout>
@@ -33,7 +45,7 @@ export default function AboutPage() {
             </div>
             <div className='col-span-7'>
               <BlockContent
-                blocks={data.About.excerptRaw}
+                blocks={excerptRaw}
                 serializers={{ types: { block: BlockRenderer } }}
               />
             </div>
