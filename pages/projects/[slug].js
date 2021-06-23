@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../../src/components/Layout';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { PROJECT_DATA } from '../../lib/queries/singleProjectData';
+import { GET_SINGLE_PROJECT } from '../../lib/queries/singleProjectData';
 import BlockContent from '@sanity/block-content-to-react';
 import { BiLink, BiCaretRight } from 'react-icons/bi';
 import moment from 'moment';
@@ -11,7 +11,7 @@ import moment from 'moment';
 export default function DynamicProjectPage() {
   const router = useRouter();
 
-  const { loading, error, data } = useQuery(PROJECT_DATA, {
+  const { loading, error, data } = useQuery(GET_SINGLE_PROJECT, {
     variables: { slug: router.query.slug },
   });
 
@@ -36,10 +36,10 @@ export default function DynamicProjectPage() {
           <div className='container'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-x-7.5'>
               <div className='font-sans'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl font-medium text-gray-800'>
+                <h2 className='text-3xl font-medium text-gray-800 md:text-4xl lg:text-5xl'>
                   {project.title}
                 </h2>
-                <h4 className='mt-5 text-lg md:text-xl lg:text-2xl font-normal text-gray-600'>
+                <h4 className='mt-5 text-lg font-normal text-gray-600 md:text-xl lg:text-2xl'>
                   {project.summary}
                 </h4>
                 <div className='inline-flex flex-row items-center justify-start border-b border-accent-400 pb-4 mt-10 mb-7.5'>
@@ -54,7 +54,7 @@ export default function DynamicProjectPage() {
                       key={item._key}
                       href={item.link}
                       target='_blank'
-                      className='mb-5 inline-flex flex-row items-center'
+                      className='inline-flex flex-row items-center mb-5'
                     >
                       <BiCaretRight size={16} />
                       <li className='list-item list-none ml-1.5 text-gray-600 hover:text-primary-500'>
@@ -94,7 +94,7 @@ export default function DynamicProjectPage() {
 
         {/* begin: misc details */}
         <section className='mb-12'>
-          <div className='bg-gray-900 px-12 py-24'>
+          <div className='px-12 py-24 bg-gray-900'>
             <div className='container'>
               <h4 className='text-xl lg:text-2xl text-gray-200 font-medium mb-7.5'>
                 Miscellaneous details
@@ -104,7 +104,7 @@ export default function DynamicProjectPage() {
                   <p className='text-base text-gray-100 font-normal mb-2.5'>
                     Stack
                   </p>
-                  <h6 className='text-lg text-white font-normal'>
+                  <h6 className='text-lg font-normal text-white'>
                     {project.technologies.join(', ')}
                   </h6>
                 </li>
@@ -112,7 +112,7 @@ export default function DynamicProjectPage() {
                   <p className='text-base text-gray-100 font-normal mb-2.5'>
                     Tags
                   </p>
-                  <ul className='list-none flex flex-row'>
+                  <ul className='flex flex-row list-none'>
                     {project.tags.map((item, index) => (
                       <li key={index} className='mr-2'>
                         <p className='text-base text-white font-normal inline-block p-1.5 rounded-sm border border-gray-700'>
@@ -126,7 +126,7 @@ export default function DynamicProjectPage() {
                   <p className='text-base text-gray-100 font-normal mb-2.5'>
                     Duration
                   </p>
-                  <h6 className='text-lg text-white font-normal'>
+                  <h6 className='text-lg font-normal text-white'>
                     {project.completed
                       ? `${moment(project.startDate).format(
                           'Do MMM YYYY'
@@ -140,7 +140,7 @@ export default function DynamicProjectPage() {
                   <p className='text-base text-gray-100 font-normal mb-2.5'>
                     Last updated
                   </p>
-                  <h6 className='text-lg text-white font-normal'>
+                  <h6 className='text-lg font-normal text-white'>
                     {`${moment(project._updatedAt).format('Do MMM YYYY')}`}
                   </h6>
                 </li>
