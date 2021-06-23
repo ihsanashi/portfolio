@@ -7,6 +7,7 @@ import { GET_SINGLE_PROJECT } from '../../lib/queries/singleProjectData';
 import BlockContent from '@sanity/block-content-to-react';
 import { BiLink, BiCaretRight } from 'react-icons/bi';
 import moment from 'moment';
+import { BlockRenderer } from '../../src/BlockRenderer';
 
 export default function DynamicProjectPage() {
   const router = useRouter();
@@ -84,7 +85,10 @@ export default function DynamicProjectPage() {
             <div className='container'>
               <div className='max-w-3xl mx-auto'>
                 <div className='py-40'>
-                  <BlockContent blocks={project.bodyRaw} />
+                  <BlockContent
+                    blocks={project.bodyRaw}
+                    serializers={{ types: { block: BlockRenderer } }}
+                  />
                 </div>
               </div>
             </div>

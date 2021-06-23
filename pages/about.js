@@ -3,32 +3,13 @@ import Layout from '../src/components/Layout';
 import { useQuery } from '@apollo/client';
 import { GET_ABOUT } from '../lib/queries/aboutpageData';
 import BlockContent from '@sanity/block-content-to-react';
-import { serializers } from '@sanity/block-content-to-react/lib/targets/dom';
+import { BlockRenderer } from '../src/BlockRenderer';
 
 export default function AboutPage() {
   const { loading, error, data } = useQuery(GET_ABOUT);
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
-
-  const BlockRenderer = (props) => {
-    const { style = 'normal' } = props.node;
-
-    if (style === 'h5') {
-      return (
-        <h5 className='font-sans text-2xl leading-relaxed text-gray-800'>
-          {props.children}
-        </h5>
-      );
-    }
-
-    if (style === 'blockquote') {
-      return <blockquote>- {props.children}</blockquote>;
-    }
-
-    // Fall back to default handling
-    return BlockContent.defaultSerializers.types.block(props);
-  };
 
   return (
     <>

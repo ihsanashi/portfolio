@@ -6,22 +6,13 @@ import { useQuery } from '@apollo/client';
 import { GET_HOMEPAGE_DATA } from '../lib/queries/homepageData';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import BlockContent from '@sanity/block-content-to-react';
+import { BlockRenderer } from '../src/BlockRenderer';
 
 export default function Home() {
   const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA);
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
-
-  const serializers = {
-    types: {
-      p: (props) => (
-        <p className='leading-relaxed font-normal text-base text-gray-700 my-7.5'>
-          {props.node.p}
-        </p>
-      ),
-    },
-  };
 
   return (
     <>
@@ -132,7 +123,7 @@ export default function Home() {
                 </h5>
                 <BlockContent
                   blocks={data.About.homeSummaryRaw}
-                  serializers={serializers}
+                  serializers={{ types: { block: BlockRenderer } }}
                 />
                 <Link href='/about'>
                   <a className='inline-block mt-7.5 font-medium transition duration-500 ease-in-out transform text-primary-600 hover:text-primary-300 hover:translate-x-1'>
