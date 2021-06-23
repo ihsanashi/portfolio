@@ -14,7 +14,20 @@ export default function ProjectsPage() {
 
       {/* begin: Layout component */}
       <Layout>
-        <section className='my-36'></section>
+        <section className='my-36'>
+          <div className='max-w-xl mx-auto'>
+            <div className='container'>
+              <div>
+                <h5 className='font-serif text-xl md:text-2xl font-medium mb-2.5'>
+                  Currently under maintenance 🚧
+                </h5>
+                <p className='font-sans text-base font-normal'>
+                  Will be up shortly
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </Layout>
       {/* end: Layout component */}
     </>
