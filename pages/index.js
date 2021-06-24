@@ -5,8 +5,7 @@ import Layout from '../src/components/Layout/index';
 import { useQuery } from '@apollo/client';
 import { GET_HOMEPAGE_DATA } from '../lib/queries/homepageData';
 import { BiRightArrowAlt } from 'react-icons/bi';
-import BlockContent from '@sanity/block-content-to-react';
-import { BlockRenderer } from '../src/BlockRenderer';
+import PortableText from 'react-portable-text';
 
 export default function Home() {
   const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA);
@@ -128,9 +127,16 @@ export default function Home() {
                 <h5 className='font-serif text-2xl font-medium text-gray-700 mb-7.5'>
                   Hello there, I'm Ihsan
                 </h5>
-                <BlockContent
-                  blocks={data.About.homeSummaryRaw}
-                  serializers={{ types: { block: BlockRenderer } }}
+                <PortableText
+                  content={data.About.homeSummaryRaw}
+                  serializers={{
+                    normal: (props) => (
+                      <p
+                        className='text-base text-gray-800 md:text-lg'
+                        {...props}
+                      />
+                    ),
+                  }}
                 />
                 <Link href='/about'>
                   <a className='inline-block mt-7.5 font-medium transition duration-500 ease-in-out transform text-primary-600 hover:text-primary-300 hover:translate-x-1'>

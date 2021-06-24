@@ -4,10 +4,9 @@ import Layout from '../../src/components/Layout';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { GET_SINGLE_PROJECT } from '../../lib/queries/singleProjectData';
-import BlockContent from '@sanity/block-content-to-react';
 import { BiLink, BiCaretRight } from 'react-icons/bi';
 import moment from 'moment';
-import { BlockRenderer } from '../../src/BlockRenderer';
+import PortableText from 'react-portable-text';
 
 export default function DynamicProjectPage() {
   const router = useRouter();
@@ -85,9 +84,19 @@ export default function DynamicProjectPage() {
             <div className='container'>
               <div className='max-w-3xl mx-auto'>
                 <div className='py-40'>
-                  <BlockContent
-                    blocks={project.bodyRaw}
-                    serializers={{ types: { block: BlockRenderer } }}
+                  <PortableText
+                    content={project.bodyRaw}
+                    serializers={{
+                      ul: (props) => (
+                        <ul className='list-disc list-inside' {...props} />
+                      ),
+                      normal: (props) => (
+                        <p
+                          className='font-sans text-base font-normal text-gray-700'
+                          {...props}
+                        />
+                      ),
+                    }}
                   />
                 </div>
               </div>
