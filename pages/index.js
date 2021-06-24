@@ -119,8 +119,8 @@ export default function Home() {
           {/* begin: about summary */}
           <section className='my-36'>
             {/* begin: grid container */}
-            <div className='grid max-w-4xl grid-cols-2 mx-auto bg-accent-25'>
-              <div className='py-24 pl-24 font-sans'>
+            <div className='grid max-w-4xl grid-cols-1 mx-auto lg:grid-cols-2 bg-accent-25'>
+              <div className='order-2 px-12 py-12 font-sans lg:py-24 lg:pl-24 lg:order-1'>
                 <h6 className='inline-block pb-1 mb-5 text-base font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400'>
                   About
                 </h6>
@@ -144,7 +144,7 @@ export default function Home() {
                   </a>
                 </Link>
               </div>
-              <div className='relative top-32 left-24'>
+              <div className='static order-1 lg:relative lg:top-32 lg:left-24 lg:order-2'>
                 <img
                   src='https://images.unsplash.com/photo-1517920366573-9d35a519b7c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
                   alt='Placeholder image'
@@ -160,7 +160,7 @@ export default function Home() {
 
           {/* begin: contact cta */}
           <section className='my-36'>
-            <div className='max-w-xl p-24 mx-auto rounded-md'>
+            <div className='max-w-xl p-8 mx-auto rounded-md lg:p-24'>
               <div className='text-center'>
                 <h3 className='font-serif text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-pink-500 to-red-500'>
                   Want to reach out?
