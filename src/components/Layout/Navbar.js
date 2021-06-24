@@ -28,7 +28,7 @@ export default function Navbar() {
             ).map((filtered) => (
               <Link href={filtered.link} key={filtered.id}>
                 <a
-                  className={`py-1 font-normal border-b border-transparent hover:text-primary-500 hover:border-primary-500 transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 inline-block ${
+                  className={`py-1 font-normal border-b border-transparent hover:text-primary-500 hover:border-primary-500 transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 inline-block text-base ${
                     router.pathname === filtered.link
                       ? 'text-primary-500'
                       : 'text-gray-500'
