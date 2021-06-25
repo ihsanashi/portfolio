@@ -8,7 +8,7 @@ import { BiLink, BiCaretRight } from 'react-icons/bi';
 import moment from 'moment';
 import PortableText from 'react-portable-text';
 
-export default function DynamicProjectPage() {
+export default function SingleProjectPage() {
   const router = useRouter();
 
   const { loading, error, data } = useQuery(GET_SINGLE_PROJECT, {
@@ -25,8 +25,8 @@ export default function DynamicProjectPage() {
   return (
     <>
       <Head>
-        <title>{`${project.title} | Ahmad Ihsan`}</title>
-        <meta name='description' content='Project description here' />
+        <title>{`${project.title} - Projects | Ahmad Ihsan`}</title>
+        <meta name='description' content={project.description} />
       </Head>
 
       {/* begin: Layout component */}
@@ -109,9 +109,6 @@ export default function DynamicProjectPage() {
         <section className='mb-12'>
           <div className='px-12 py-24 bg-gray-900'>
             <div className='container'>
-              <h4 className='text-xl lg:text-2xl text-gray-200 font-medium mb-7.5'>
-                Miscellaneous details
-              </h4>
               <ul className='grid grid-cols-2 lg:grid-cols-4'>
                 <li>
                   <p className='text-base text-gray-100 font-normal mb-2.5'>
