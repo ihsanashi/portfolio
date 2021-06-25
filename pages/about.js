@@ -27,6 +27,7 @@ export default function AboutPage() {
 
   const {
     _updatedAt,
+    title,
     description,
     excerptRaw,
     personalBodyRaw,
@@ -34,12 +35,10 @@ export default function AboutPage() {
     skills,
   } = data.About;
 
-  console.log(data);
-
   return (
     <>
       <Head>
-        <title>About | Ahmad Ihsan</title>
+        <title>{title}</title>
         <meta name='description' content={description} />
       </Head>
       {/* begin: Layout component */}
@@ -181,7 +180,7 @@ export default function AboutPage() {
                   {skills.map((item) => (
                     <li
                       key={item._key}
-                      className='mr-2.5 mb-2 px-1.5 py-0.5 bg-gray-100 rounded-md'
+                      className='mr-2.5 mb-2 px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded-md'
                     >
                       {item.title}
                     </li>
