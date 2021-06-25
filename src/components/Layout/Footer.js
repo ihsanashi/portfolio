@@ -8,7 +8,7 @@ export default function Footer() {
       <div className='container divide-y divide-gray-200'>
         <section className='grid grid-cols-1 gap-5 pb-12 md:grid-cols-2 lg:grid-cols-3'>
           <div className='flex flex-col text-sm'>
-            <h6 className='font-light tracking-wider text-gray-600 uppercase'>
+            <h6 className='font-light tracking-widest text-gray-600 uppercase'>
               Sitemap
             </h6>
             <ul className='grid grid-cols-3 mt-2 mb-5 list-none'>
@@ -24,8 +24,8 @@ export default function Footer() {
             </ul>
           </div>
           <div className='text-sm'>
-            <h6 className='font-light tracking-wider text-gray-600 uppercase'>
-              Stack
+            <h6 className='font-light tracking-widest text-gray-600 uppercase'>
+              Made with 🖤 and ☕
             </h6>
             <p className='mt-2 font-normal leading-relaxed text-gray-700'>
               This website was built with Next.js and React, the content is
@@ -34,7 +34,7 @@ export default function Footer() {
             </p>
           </div>
           <div className='text-sm'>
-            <h6 className='font-light tracking-wider text-gray-600 uppercase'>
+            <h6 className='font-light tracking-widest text-gray-600 uppercase'>
               Socials
             </h6>
             <ul className='flex flex-row flex-wrap mt-2 list-none'>
@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
         </section>
         <section className='pt-10'>
-          <small className='block font-sans text-xs font-light text-center text-gray-700 md:text-sm'>
+          <small className='block font-sans text-xs font-light text-center text-gray-500 md:text-sm'>
             © Ahmad Ihsan, all rights reserved.
           </small>
         </section>
