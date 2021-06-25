@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Sitemap } from '../../Sitemap';
 import { Socials } from '../../Socials';
+import { TechLogos } from './TechLogos';
 
 export default function Footer() {
   return (
@@ -24,14 +26,25 @@ export default function Footer() {
             </ul>
           </div>
           <div className='text-sm'>
-            <h6 className='font-light tracking-widest text-gray-600 uppercase'>
-              Made with 🖤 and ☕
-            </h6>
-            <p className='mt-2 font-normal leading-relaxed text-gray-700'>
-              This website was built with Next.js and React, the content is
-              stored with Sanity.io, and the data is queried with Apollo and
-              GraphQL.
+            <p className='font-light tracking-widest text-gray-600 uppercase'>
+              Built with
             </p>
+            <ul className='grid grid-cols-4 mt-2 gap-y-5'>
+              {TechLogos.map((item, index) => (
+                <li key={index}>
+                  <a href={item.href} target='_blank'>
+                    <Image
+                      layout='fixed'
+                      objectFit='contain'
+                      src={item.src}
+                      alt={item.altText}
+                      height={56}
+                      width={56}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className='text-sm'>
             <h6 className='font-light tracking-widest text-gray-600 uppercase'>
@@ -55,10 +68,11 @@ export default function Footer() {
             </ul>
           </div>
         </section>
-        <section className='pt-10'>
-          <small className='block font-sans text-xs font-light text-center text-gray-500 md:text-sm'>
-            © Ahmad Ihsan, all rights reserved.
-          </small>
+        <section className='pt-8 md:pt-10'>
+          <div className='flex flex-col flex-wrap items-center justify-between font-sans text-xs font-light text-gray-500 md:flex-row md:text-sm'>
+            <p>© Ahmad Ihsan, all rights reserved.</p>
+            <p className='mt-4 md:mt-0'>Made with 🖤 and ☕</p>
+          </div>
         </section>
       </div>
     </footer>
