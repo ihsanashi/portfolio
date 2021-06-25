@@ -2,10 +2,18 @@ import Head from 'next/head';
 import { useState, useRef } from 'react';
 import { BiCopy } from 'react-icons/bi';
 import Layout from '../src/components/Layout';
+import { useQuery } from '@apollo/client';
+import { GET_CONTACT_DATA } from '../lib/queries/contactData';
 
 export default function ContactPage() {
+  const { loading, error, data } = useQuery(GET_CONTACT_DATA);
   const [isCopied, setIsCopied] = useState(false);
   const emailRef = useRef(null);
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+  const { description, title } = data.Contact;
 
   function copyToClipboard(e) {
     emailRef.current.select();
@@ -21,8 +29,8 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact | Ahmad Ihsan</title>
-        <meta name='description' content='Contact Ahmad Ihsan' />
+        <title>{title}</title>
+        <meta name='description' content={description} />
       </Head>
       {/* begin: Layout component */}
       <Layout>
