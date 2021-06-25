@@ -12,8 +12,6 @@ export default function ProjectsPage() {
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 
-  console.log(data);
-
   return (
     <>
       <Head>
