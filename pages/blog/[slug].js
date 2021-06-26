@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Custom404 from '../404';
 import Layout from '../../src/components/Layout';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
@@ -16,11 +17,11 @@ export default function SinglePostPage() {
   });
 
   if (loading) return 'Loading...';
-  if (error) return `Error! ${error.message}`;
+  if (error) return <Custom404 />;
 
   const post = data.allPost.length !== 0 ? data.allPost[0] : null;
 
-  if (post === null) return "Error! Page doesn't exist";
+  if (post === null) return <Custom404 />;
 
   return (
     <>
@@ -68,7 +69,7 @@ export default function SinglePostPage() {
                   <div className='flex flex-row flex-wrap items-center font-sans font-light text-sm text-gray-600 mb-2.5'>
                     <BiCalendarEdit size={16} />
                     <p className='ml-1.5'>
-                      {`Last updated ${moment(post._updatedAt).format(
+                      {`Updated ${moment(post._updatedAt).format(
                         'D MMM YYYY, h:mm a'
                       )}`}
                     </p>

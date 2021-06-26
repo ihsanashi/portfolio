@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Custom404 from './404';
 import { useState, useRef } from 'react';
 import { BiCopy } from 'react-icons/bi';
 import Layout from '../src/components/Layout';
@@ -11,7 +12,7 @@ export default function ContactPage() {
   const emailRef = useRef(null);
 
   if (loading) return 'Loading...';
-  if (error) return `Error! ${error.message}`;
+  if (error) return <Custom404 />;
 
   const { description, title } = data.Contact;
 

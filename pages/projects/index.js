@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Custom404 from '../404';
 import Layout from '../../src/components/Layout';
 import { useQuery } from '@apollo/client';
 import { GET_PROJECTS } from '../../lib/queries/allProjectsData';
@@ -10,7 +11,7 @@ export default function ProjectsPage() {
   const { loading, error, data } = useQuery(GET_PROJECTS);
 
   if (loading) return 'Loading...';
-  if (error) return `Error! ${error.message}`;
+  if (error) return <Custom404 />;
 
   return (
     <>
@@ -26,7 +27,7 @@ export default function ProjectsPage() {
       <Layout>
         <section className='my-36'>
           <div className='container'>
-            <ul className='grid grid-cols-1 gap-x-5 gap-y-12 md:grid-cols-2 lg:grid-cols-4'>
+            <ul className='grid grid-cols-1 gap-x-5 gap-y-12 md:grid-cols-2 lg:grid-cols-3'>
               {data.allProject.map((project) => (
                 <li
                   className='border border-gray-100 rounded-md'

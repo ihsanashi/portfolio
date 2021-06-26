@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Custom404 from '../404';
 import Layout from '../../src/components/Layout';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../../lib/queries/allPostsData';
@@ -11,7 +12,7 @@ export default function BlogPage() {
   const { loading, error, data } = useQuery(GET_POSTS);
 
   if (loading) return 'Loading...';
-  if (error) return `Error! ${error.message}`;
+  if (error) return <Custom404 />;
 
   return (
     <>
