@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Custom404 from '../404';
+import Loading from '../../src/components/Loading';
 import Layout from '../../src/components/Layout';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
@@ -16,7 +17,7 @@ export default function SingleProjectPage() {
     variables: { slug: router.query.slug },
   });
 
-  if (loading) return 'Loading...';
+  if (loading) return <Loading />;
   if (error) return <Custom404 />;
 
   const project = data.allProject.length !== 0 ? data.allProject[0] : null;

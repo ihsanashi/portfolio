@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Custom404 from '../404';
+import Loading from '../../src/components/Loading';
 import Layout from '../../src/components/Layout';
 import { useQuery } from '@apollo/client';
 import { GET_PROJECTS } from '../../lib/queries/allProjectsData';
@@ -10,7 +11,7 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 export default function ProjectsPage() {
   const { loading, error, data } = useQuery(GET_PROJECTS);
 
-  if (loading) return 'Loading...';
+  if (loading) return <Loading />;
   if (error) return <Custom404 />;
 
   return (

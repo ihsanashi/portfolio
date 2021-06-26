@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../src/components/Layout';
 import Custom404 from './404';
+import Loading from '../src/components/Loading';
 import moment from 'moment';
 import { useQuery } from '@apollo/client';
 import { GET_ABOUT } from '../lib/queries/aboutpageData';
@@ -23,7 +24,7 @@ export default function AboutPage() {
 
   const { loading, error, data } = useQuery(GET_ABOUT);
 
-  if (loading) return 'Loading...';
+  if (loading) return <Loading />;
   if (error) return <Custom404 />;
 
   const {

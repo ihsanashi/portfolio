@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Custom404 from './404';
+import Loading from '../src/components/Loading';
 import Layout from '../src/components/Layout/index';
 import { useQuery } from '@apollo/client';
 import { GET_HOMEPAGE_DATA } from '../lib/queries/homepageData';
@@ -11,7 +12,7 @@ import PortableText from 'react-portable-text';
 export default function Home() {
   const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA);
 
-  if (loading) return 'Loading...';
+  if (loading) return <Loading />;
   if (error) return <Custom404 />;
 
   return (
