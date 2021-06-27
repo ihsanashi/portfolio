@@ -45,37 +45,38 @@ export default function AboutPage() {
       </Head>
       {/* begin: Layout component */}
       <Layout>
-        {/* begin: container */}
-        <div className='container'>
-          {/* begin: hero */}
-          <section className='grid gap-5 lg:grid-cols-12 my-36'>
-            <div className='pt-3 lg:col-span-5'>
-              <h6 className='mb-5 font-sans text-lg font-medium tracking-wider uppercase md:text-xl'>
-                About
-              </h6>
-              <h2 className='font-serif text-3xl font-bold text-transparent md:text-4xl lg:text-5xl bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300'>
-                Ahmad Ihsan
-              </h2>
+        <section className='my-20 md:my-36'>
+          <div className='container'>
+            {/* begin: hero */}
+            <div className='grid grid-cols-1 gap-5 md:grid-cols-8 lg:grid-cols-12'>
+              <div className='pt-3 md:col-span-3 lg:col-span-5'>
+                <h6 className='mb-5 font-sans text-lg font-medium tracking-wider uppercase md:text-xl'>
+                  About
+                </h6>
+                <h2 className='font-serif text-3xl font-bold text-transparent md:text-4xl lg:text-5xl bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300'>
+                  Ahmad Ihsan
+                </h2>
+              </div>
+              <div className='md:col-span-5 lg:col-span-7'>
+                <PortableText
+                  content={excerptRaw}
+                  serializers={{
+                    h5: (props) => (
+                      <h5
+                        className='font-sans text-xl leading-relaxed text-gray-800 md:text-2xl'
+                        {...props}
+                      />
+                    ),
+                  }}
+                />
+              </div>
             </div>
-            <div className='lg:col-span-7'>
-              <PortableText
-                content={excerptRaw}
-                serializers={{
-                  h5: (props) => (
-                    <h5
-                      className='font-sans text-xl leading-relaxed text-gray-800 md:text-2xl'
-                      {...props}
-                    />
-                  ),
-                }}
-              />
-            </div>
-          </section>
-          {/* end: hero */}
-        </div>
-        {/* end: container */}
+            {/* end: hero */}
+          </div>
+        </section>
+
         {/* begin: personal content */}
-        <section className='mt-24'>
+        <section className='md:mt-20 lg:mt-36'>
           <div className='py-24 bg-primary-800'>
             <div className='container'>
               <div className='max-w-xl mx-auto'>

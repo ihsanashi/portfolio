@@ -34,7 +34,7 @@ export default function SingleProjectPage() {
       {/* begin: Layout component */}
       <Layout>
         {/* begin: hero */}
-        <section className='my-36'>
+        <section className='my-20 md:my-36'>
           <div className='container'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-x-7.5'>
               <div className='font-sans'>
@@ -85,7 +85,7 @@ export default function SingleProjectPage() {
           <div className='bg-gray-50'>
             <div className='container'>
               <div className='max-w-3xl mx-auto'>
-                <div className='py-40'>
+                <div className='py-20 md:py-32 lg:py-40'>
                   <PortableText
                     content={project.bodyRaw}
                     serializers={{

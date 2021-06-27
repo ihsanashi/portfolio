@@ -25,7 +25,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <div className='text-sm'>
+          <div className='order-3 text-sm md:col-span-2 lg:order-2 lg:col-span-1'>
             <p className='font-light tracking-widest text-gray-600 uppercase'>
               Built with
             </p>
@@ -46,7 +46,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <div className='text-sm'>
+          <div className='order-2 text-sm md:order-2 lg:order-3'>
             <h6 className='font-light tracking-widest text-gray-600 uppercase'>
               Socials
             </h6>

@@ -30,7 +30,7 @@ export default function Home() {
         {/* begin: container */}
         <div className='container'>
           {/* begin: hero section */}
-          <section className='my-36'>
+          <section className='my-20 md:my-36'>
             <div className='max-w-xl mx-auto font-sans'>
               <h5 className='mt-3 mb-5 text-2xl font-medium text-center text-gray-900'>
                 <span className='font-serif text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300'>
@@ -43,7 +43,7 @@ export default function Home() {
           </section>
           {/* end: hero section */}
           {/* begin: new project section */}
-          <section className='my-36'>
+          <section className='my-20 md:my-36'>
             <div className='max-w-4xl mx-auto'>
               <h5 className='inline-block pb-1 mb-10 text-lg font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400'>
                 Projects
@@ -119,7 +119,7 @@ export default function Home() {
           {/* end: new project section */}
 
           {/* begin: about summary */}
-          <section className='my-36'>
+          <section className='my-20 md:my-36'>
             {/* begin: grid container */}
             <div className='grid max-w-4xl grid-cols-1 mx-auto lg:grid-cols-2 bg-accent-25'>
               <div className='order-2 px-12 py-12 font-sans lg:py-24 lg:pl-24 lg:order-1'>
@@ -161,15 +161,14 @@ export default function Home() {
           {/* end: about summary */}
 
           {/* begin: contact cta */}
-          <section className='my-36'>
+          <section className='my-20 md:my-36'>
             <div className='max-w-xl p-8 mx-auto rounded-md lg:p-24'>
               <div className='text-center'>
                 <h3 className='font-serif text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-pink-500 to-red-500'>
                   Want to reach out?
                 </h3>
                 <h6 className='mt-2.5 mb-7.5 text-lg text-gray-800'>
-                  I'm actively looking for a remote Frontend Developer role,
-                  primarily focusing on React.
+                  I'm actively looking for a remote Frontend Developer role.
                 </h6>
                 <Link href='/contact'>
                   <a className='inline-block px-5 py-3 font-medium rounded-md bg-primary-50 hover:bg-primary-500 text-primary-500 hover:text-white transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105'>

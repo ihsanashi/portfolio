@@ -22,7 +22,8 @@ export default function Navbar() {
               </a>
             </Link>
           </div>
-          <div className='flex flex-row items-center flex-auto justify-evenly'>
+          <div className='flex-grow'></div>
+          <div className='flex flex-row items-center justify-between flex-grow'>
             {Sitemap.filter(
               (item) => !item.title.toLowerCase().includes('contact')
             ).map((filtered) => (
@@ -38,8 +39,6 @@ export default function Navbar() {
                 </a>
               </Link>
             ))}
-          </div>
-          <div className='flex-none'>
             {Sitemap.filter((item) =>
               item.title.toLowerCase().includes('contact')
             ).map((filtered) => (

@@ -26,7 +26,7 @@ export default function ProjectsPage() {
 
       {/* begin: Layout component */}
       <Layout>
-        <section className='my-36'>
+        <section className='my-20 md:my-36'>
           <div className='container'>
             <ul className='grid grid-cols-1 gap-x-5 gap-y-12 md:grid-cols-2 lg:grid-cols-3'>
               {data.allProject.map((project) => (

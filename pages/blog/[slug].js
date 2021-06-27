@@ -34,7 +34,7 @@ export default function SinglePostPage() {
       {/* begin: Layout component */}
       <Layout>
         {/* begin: post content */}
-        <section className='my-36'>
+        <section className='my-20 md:my-36'>
           <div className='container'>
             <div className='max-w-xl mx-auto'>
               <p className='font-sans text-base font-light text-center text-gray-500'>{`Posted ${moment(
@@ -56,7 +56,7 @@ export default function SinglePostPage() {
               width={960}
               height={540}
               objectFit='cover'
-              className='rounded-md'
+              className='rounded-none lg:rounded-md'
             />
           </div>
           <div className='container'>
