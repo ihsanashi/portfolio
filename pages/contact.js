@@ -56,7 +56,7 @@ export default function ContactPage() {
                   </h6>
                 </div>
                 <div className='mt-12'>
-                  <div className='flex flex-row'>
+                  <div className='flex flex-row justify-center'>
                     <input
                       className='px-5 py-3 overflow-hidden border border-gray-200 rounded-l-md'
                       type='text'

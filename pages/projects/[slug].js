@@ -110,11 +110,11 @@ export default function SingleProjectPage() {
 
         {/* begin: misc details */}
         <section>
-          <div className='px-12 py-24 bg-gray-900'>
+          <div className='bg-gray-900 px-7.5 py-12 md:px-12 md:py-24'>
             <div className='container'>
-              <ul className='grid grid-cols-2 lg:grid-cols-4'>
+              <ul className='grid grid-cols-2 gap-5 lg:grid-cols-4'>
                 <li>
-                  <p className='text-base text-gray-100 font-normal mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-100 font-normal mb-2.5'>
                     Stack
                   </p>
                   <h6 className='text-lg font-normal text-white'>
@@ -122,7 +122,7 @@ export default function SingleProjectPage() {
                   </h6>
                 </li>
                 <li>
-                  <p className='text-base text-gray-100 font-normal mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-100 font-normal mb-2.5'>
                     Tags
                   </p>
                   <ul className='flex flex-row list-none'>
@@ -136,7 +136,7 @@ export default function SingleProjectPage() {
                   </ul>
                 </li>
                 <li>
-                  <p className='text-base text-gray-100 font-normal mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-100 font-normal mb-2.5'>
                     Duration
                   </p>
                   <h6 className='text-lg font-normal text-white'>
@@ -150,7 +150,7 @@ export default function SingleProjectPage() {
                   </h6>
                 </li>
                 <li>
-                  <p className='text-base text-gray-100 font-normal mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-100 font-normal mb-2.5'>
                     Last updated
                   </p>
                   <h6 className='text-lg font-normal text-white'>
