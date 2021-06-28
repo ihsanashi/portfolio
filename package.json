@@ -13,6 +13,7 @@
     "@material-ui/core": "^4.11.4",
     "@material-ui/lab": "^4.0.0-alpha.58",
     "@sanity/client": "^2.11.0",
+    "@sendgrid/mail": "^7.4.5",
     "@tailwindcss/forms": "^0.3.3",
     "graphql": "^15.5.1",
     "moment": "^2.29.1",

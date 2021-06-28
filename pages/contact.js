@@ -29,6 +29,22 @@ export default function ContactPage() {
     }, 2000);
   }
 
+  async function handleForm(e) {
+    e.preventDefault();
+
+    let formData = {};
+
+    Array.from(e.currentTarget.elements).forEach((field) => {
+      if (!field.name) return;
+      formData[field.name] = field.value;
+    });
+
+    await fetch('/api/mail', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+    });
+  }
+
   return (
     <>
       <Head>
@@ -56,7 +72,7 @@ export default function ContactPage() {
                   </h6>
                 </div>
                 <div className='mt-12'>
-                  <div className='flex flex-row items-stretch justify-items-stretch'>
+                  <div className='flex flex-row items-stretch'>
                     <input
                       className='inline w-full px-5 py-3 overflow-hidden border border-gray-200 rounded-l-md'
                       type='text'
@@ -104,10 +120,10 @@ export default function ContactPage() {
                 </h6>
               </div>
               <div>
-                <form>
+                <form onSubmit={handleForm}>
                   <div className='grid grid-cols-1 md:grid-cols-2 gap-x-6'>
                     <div className='my-2.5 md:my-3.5'>
-                      <label className='block'>
+                      <label className='block' htmlFor='name'>
                         <span className='text-base font-medium text-gray-700'>
                           Full name
                         </span>
@@ -115,13 +131,14 @@ export default function ContactPage() {
                           type='text'
                           className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                           placeholder='Obi-Wan Kenobi'
-                          name='fullName'
+                          id='name'
+                          name='name'
                           required
                         />
                       </label>
                     </div>
                     <div className='my-2.5 md:my-3.5'>
-                      <label className='block'>
+                      <label className='block' htmlFor='email'>
                         <span className='text-base font-medium text-gray-700'>
                           Email address
                         </span>
@@ -129,6 +146,7 @@ export default function ContactPage() {
                           type='email'
                           className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                           placeholder='obi@therepublic.com'
+                          id='email'
                           name='email'
                           required
                         />
@@ -137,7 +155,7 @@ export default function ContactPage() {
                   </div>
                   <div className='grid grid-cols-1'>
                     <div className='my-2.5 md:my-3.5'>
-                      <label className='block'>
+                      <label className='block' htmlFor='subject'>
                         <span className='text-base font-medium text-gray-700'>
                           Subject
                         </span>
@@ -145,14 +163,16 @@ export default function ContactPage() {
                           type='text'
                           className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                           placeholder='The Death Star Initiative'
+                          id='subject'
                           name='subject'
+                          required
                         />
                       </label>
                     </div>
                   </div>
                   <div className='grid grid-cols-1'>
                     <div className='my-2.5 md:my-3.5'>
-                      <label className='block'>
+                      <label className='block' htmlFor='message'>
                         <div className='flex flex-row items-center justify-between'>
                           <span className='text-base font-medium text-gray-700'>
                             Message
@@ -165,6 +185,7 @@ export default function ContactPage() {
                           className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                           rows='3'
                           placeholder='Dear General Organa...'
+                          id='message'
                           name='message'
                           required
                         ></textarea>
