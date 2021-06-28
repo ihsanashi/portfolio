@@ -8,6 +8,7 @@ import { useQuery } from '@apollo/client';
 import { GET_HOMEPAGE_DATA } from '../lib/queries/homepageData';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import PortableText from 'react-portable-text';
+import { initializeApollo } from '../lib/apolloClient';
 
 export default function Home() {
   const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA);
@@ -186,3 +187,16 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const apolloClient = initializeApollo();
+  await apolloClient.query({
+    query: GET_HOMEPAGE_DATA,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+};
