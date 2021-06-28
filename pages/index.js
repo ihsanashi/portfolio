@@ -147,12 +147,12 @@ export default function Home() {
                   </a>
                 </Link>
               </div>
-              <div className='static order-1 lg:relative lg:top-32 lg:left-24 lg:order-2'>
+              <div className='static order-1 p-5 md:p-12 lg:p-0 lg:relative lg:top-32 lg:left-24 lg:order-2'>
                 <img
-                  src='https://images.unsplash.com/photo-1517920366573-9d35a519b7c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+                  src='./home-about.jpg'
                   alt='Placeholder image'
-                  height='400px'
-                  width='400px'
+                  height='478px'
+                  width='auto'
                   className='rounded-md shadow-lg'
                 />
               </div>
