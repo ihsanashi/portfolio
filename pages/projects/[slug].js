@@ -109,7 +109,7 @@ export default function SingleProjectPage() {
         {/* end: content */}
 
         {/* begin: misc details */}
-        <section className='mb-12'>
+        <section>
           <div className='px-12 py-24 bg-gray-900'>
             <div className='container'>
               <ul className='grid grid-cols-2 lg:grid-cols-4'>
