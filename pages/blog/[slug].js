@@ -5,15 +5,16 @@ import Loading from '../../src/components/Loading';
 import Layout from '../../src/components/Layout';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { GET_SINGLE_POST } from '../../lib/queries/singlePostData';
+import { GET_SINGLE_POST_DATA } from '../../lib/queries/singlePostData';
 import moment from 'moment';
 import PortableText from 'react-portable-text';
 import { BiFolderOpen, BiCalendarEdit, BiHash } from 'react-icons/bi';
+import { initializeApollo } from '../../lib/apolloClient';
 
 export default function SinglePostPage() {
   const router = useRouter();
 
-  const { loading, error, data } = useQuery(GET_SINGLE_POST, {
+  const { loading, error, data } = useQuery(GET_SINGLE_POST_DATA, {
     variables: { slug: router.query.slug },
   });
 
@@ -97,3 +98,16 @@ export default function SinglePostPage() {
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const apolloClient = initializeApollo();
+  await apolloClient.query({
+    query: GET_SINGLE_POST_DATA,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+};

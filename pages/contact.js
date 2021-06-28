@@ -6,6 +6,7 @@ import { BiCopy } from 'react-icons/bi';
 import Layout from '../src/components/Layout';
 import { useQuery } from '@apollo/client';
 import { GET_CONTACT_DATA } from '../lib/queries/contactData';
+import { initializeApollo } from '../lib/apolloClient';
 
 export default function ContactPage() {
   const { loading, error, data } = useQuery(GET_CONTACT_DATA);
@@ -179,3 +180,16 @@ export default function ContactPage() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const apolloClient = initializeApollo();
+  await apolloClient.query({
+    query: GET_CONTACT_DATA,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+};

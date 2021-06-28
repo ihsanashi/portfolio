@@ -4,7 +4,7 @@ import Custom404 from './404';
 import Loading from '../src/components/Loading';
 import moment from 'moment';
 import { useQuery } from '@apollo/client';
-import { GET_ABOUT } from '../lib/queries/aboutpageData';
+import { GET_ABOUT_DATA } from '../lib/queries/aboutpageData';
 import PortableText from 'react-portable-text';
 import { BiCalendar, BiMap, BiBriefcase } from 'react-icons/bi';
 import Timeline from '@material-ui/lab/Timeline';
@@ -14,6 +14,7 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import { initializeApollo } from '../lib/apolloClient';
 
 export default function AboutPage() {
   const workIconStyles = 'inline-block mr-0.5 md:mr-1.5 text-gray-400';
@@ -22,7 +23,7 @@ export default function AboutPage() {
   const workLeftFlexItemContainer =
     'flex flex-row items-start md:items-center justify-end mb-2.5';
 
-  const { loading, error, data } = useQuery(GET_ABOUT);
+  const { loading, error, data } = useQuery(GET_ABOUT_DATA);
 
   if (loading) return <Loading />;
   if (error) return <Custom404 />;
@@ -199,3 +200,16 @@ export default function AboutPage() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const apolloClient = initializeApollo();
+  await apolloClient.query({
+    query: GET_ABOUT_DATA,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+};

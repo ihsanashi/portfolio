@@ -5,15 +5,16 @@ import Loading from '../../src/components/Loading';
 import Layout from '../../src/components/Layout';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { GET_SINGLE_PROJECT } from '../../lib/queries/singleProjectData';
+import { GET_SINGLE_PROJECT_DATA } from '../../lib/queries/singleProjectData';
 import { BiLink, BiCaretRight } from 'react-icons/bi';
 import moment from 'moment';
 import PortableText from 'react-portable-text';
+import { initializeApollo } from '../../lib/apolloClient';
 
 export default function SingleProjectPage() {
   const router = useRouter();
 
-  const { loading, error, data } = useQuery(GET_SINGLE_PROJECT, {
+  const { loading, error, data } = useQuery(GET_SINGLE_PROJECT_DATA, {
     variables: { slug: router.query.slug },
   });
 
@@ -117,7 +118,7 @@ export default function SingleProjectPage() {
                     Stack
                   </p>
                   <h6 className='text-lg font-normal text-white'>
-                    {project.technologies.join(', ')}
+                    {project.technologies && project.technologies.join(', ')}
                   </h6>
                 </li>
                 <li>
@@ -166,3 +167,16 @@ export default function SingleProjectPage() {
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const apolloClient = initializeApollo();
+  await apolloClient.query({
+    query: GET_SINGLE_PROJECT_DATA,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+};

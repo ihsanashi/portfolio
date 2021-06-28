@@ -5,11 +5,12 @@ import Custom404 from '../404';
 import Loading from '../../src/components/Loading';
 import Layout from '../../src/components/Layout';
 import { useQuery } from '@apollo/client';
-import { GET_PROJECTS } from '../../lib/queries/allProjectsData';
+import { GET_PROJECTS_DATA } from '../../lib/queries/allProjectsData';
 import { BiRightArrowAlt } from 'react-icons/bi';
+import { initializeApollo } from '../../lib/apolloClient';
 
 export default function ProjectsPage() {
-  const { loading, error, data } = useQuery(GET_PROJECTS);
+  const { loading, error, data } = useQuery(GET_PROJECTS_DATA);
 
   if (loading) return <Loading />;
   if (error) return <Custom404 />;
@@ -102,3 +103,16 @@ export default function ProjectsPage() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const apolloClient = initializeApollo();
+  await apolloClient.query({
+    query: GET_PROJECTS_DATA,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+};

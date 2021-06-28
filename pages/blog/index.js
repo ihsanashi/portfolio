@@ -5,12 +5,13 @@ import Custom404 from '../404';
 import Loading from '../../src/components/Loading';
 import Layout from '../../src/components/Layout';
 import { useQuery } from '@apollo/client';
-import { GET_POSTS } from '../../lib/queries/allPostsData';
+import { GET_POSTS_DATA } from '../../lib/queries/allPostsData';
 import moment from 'moment';
 import { BiFolderOpen, BiRightArrowAlt } from 'react-icons/bi';
+import { initializeApollo } from '../../lib/apolloClient';
 
 export default function BlogPage() {
-  const { loading, error, data } = useQuery(GET_POSTS);
+  const { loading, error, data } = useQuery(GET_POSTS_DATA);
 
   if (loading) return <Loading />;
   if (error) return <Custom404 />;
@@ -85,3 +86,16 @@ export default function BlogPage() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const apolloClient = initializeApollo();
+  await apolloClient.query({
+    query: GET_POSTS_DATA,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+};
