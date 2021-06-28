@@ -27,8 +27,6 @@ export default async (req, res) => {
   } catch (error) {
     console.log('Error while sending mail through Sendgrid', error);
     res.json(error);
-    res
-      .status(400)
-      .send({ error: 'Error with Sendgrid service', errMsg: error });
+    res.status(400).json({ status: '400: Failed to send mail' });
   }
 };
