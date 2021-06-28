@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Sitemap } from '../../Sitemap';
 import { Socials } from '../../Socials';
-import { TechLogos } from './TechLogos';
+import { TechLogos } from '../../TechLogos';
 
 export default function Footer() {
   return (
