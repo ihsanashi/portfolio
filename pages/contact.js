@@ -56,16 +56,16 @@ export default function ContactPage() {
                   </h6>
                 </div>
                 <div className='mt-12'>
-                  <div className='flex flex-row justify-center'>
+                  <div className='flex flex-row items-stretch justify-items-stretch'>
                     <input
-                      className='px-5 py-3 overflow-hidden border border-gray-200 rounded-l-md'
+                      className='inline w-full px-5 py-3 overflow-hidden border border-gray-200 rounded-l-md'
                       type='text'
                       value='hello@ahmadihsan.com'
                       ref={emailRef}
                       readOnly
                     />
                     <button
-                      className='flex flex-row items-center px-5 py-3 text-white transition duration-500 ease-in-out bg-primary-400 hover:bg-primary-600 rounded-r-md'
+                      className='inline-flex flex-row items-center px-5 py-3 text-white transition duration-500 ease-in-out bg-primary-400 hover:bg-primary-600 rounded-r-md'
                       onClick={copyToClipboard}
                     >
                       <BiCopy size={16} />
