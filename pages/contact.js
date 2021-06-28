@@ -74,7 +74,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 {isCopied && (
-                  <p className='ml-5 mt-5 inline-block text-sm bg-accent-200 text-accent-600 p-1.5 rounded-md transition duration-300 ease-in-out'>
+                  <p className='mt-7.5 max-w-max block mx-auto text-center text-sm bg-accent-200 text-accent-600 p-1.5 rounded-md transition duration-300 ease-in-out'>
                     Copied to clipboard!
                   </p>
                 )}
@@ -115,6 +115,8 @@ export default function ContactPage() {
                           type='text'
                           className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                           placeholder='Obi-Wan Kenobi'
+                          name='fullName'
+                          required
                         />
                       </label>
                     </div>
@@ -127,6 +129,8 @@ export default function ContactPage() {
                           type='email'
                           className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                           placeholder='obi@therepublic.com'
+                          name='email'
+                          required
                         />
                       </label>
                     </div>
@@ -141,6 +145,7 @@ export default function ContactPage() {
                           type='text'
                           className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                           placeholder='The Death Star Initiative'
+                          name='subject'
                         />
                       </label>
                     </div>
@@ -160,6 +165,8 @@ export default function ContactPage() {
                           className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                           rows='3'
                           placeholder='Dear General Organa...'
+                          name='message'
+                          required
                         ></textarea>
                       </label>
                     </div>
