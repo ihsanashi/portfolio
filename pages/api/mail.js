@@ -16,7 +16,7 @@ export default async (req, res) => {
     await mail
       .send({
         to: 'hello@ahmadihsan.com',
-        from: `${body.email}`,
+        from: 'contact@ahmadihsan.com',
         subject: `${body.name} just submitted a contact form on your website`,
         text: message,
         html: message.replace(/\r\n/g, '<br>'),

@@ -43,6 +43,8 @@ export default function ContactPage() {
       method: 'POST',
       body: JSON.stringify(formData),
     });
+
+    e.target.reset();
   }
 
   return (
