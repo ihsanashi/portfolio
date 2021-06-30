@@ -1,8 +1,16 @@
-### Introduction
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Technologies](#technologies)
+  - [Getting Started](#getting-started)
+  - [Learn More](#learn-more)
+  - [Deploy on Vercel](#deploy-on-vercel)
+
+## Introduction
 
 This is a repo for my latest development portfolio, built with React and Next.js, with the content coming in from [Sanity.io](https://www.sanity.io/), and queried with [Apollo Client](https://www.apollographql.com/) and [GraphQL](https://graphql.org/).
 
-#### Technologies
+## Technologies
 
 - React and Next.js for UI, utilising getStaticProps (static generation, fetch data at build time) and getServerSideProps (server-side rendering, fetch data at request time). *next-sanity-image* was used for image optimisation.
 - sanity/client library for fetching content from the Sanity CMS, and *react-portable-text* library for rendering rich text
