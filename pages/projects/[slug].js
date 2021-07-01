@@ -107,7 +107,7 @@ export default function SingleProjectPage() {
               <ul className='grid grid-cols-2 gap-5 lg:grid-cols-4'>
                 <li>
                   <p className='text-sm md:text-base text-gray-300 font-light mb-2.5'>
-                    Stack
+                    Technologies
                   </p>
                   <h6 className='text-base font-normal text-white lg:text-lg'>
                     {project.technologies && project.technologies.join(', ')}
