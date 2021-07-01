@@ -37,12 +37,13 @@ export default function ProjectsPage() {
                 >
                   <article className='flex flex-col group'>
                     <div className='relative'>
-                      <Link href={`projects/${project.slug.current}`}>
+                      <Link href={`/projects/${project.slug.current}`}>
                         <a>
                           <Image
                             className='rounded-t-md'
                             src={project.image.asset.url}
                             layout='responsive'
+                            objectFit='cover'
                             width={330}
                             height={200}
                           />
@@ -50,7 +51,7 @@ export default function ProjectsPage() {
                       </Link>
                     </div>
                     <div className='p-5'>
-                      <Link href={`projects/${project.slug.current}`}>
+                      <Link href={`/projects/${project.slug.current}`}>
                         <a>
                           <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500'>
                             {project.title}
@@ -84,7 +85,7 @@ export default function ProjectsPage() {
                         </ul>
                       )}
                       <div className='flex flex-row items-center justify-start mt-10 group'>
-                        <Link href={`projects/${project.slug.current}`}>
+                        <Link href={`/projects/${project.slug.current}`}>
                           <a className='inline-flex flex-row items-center text-sm font-medium tracking-wider transition duration-500 ease-in-out transform text-primary-600 hover:text-primary-300 hover:translate-x-1'>
                             Explore
                             <BiRightArrowAlt className='ml-1.5' size={18} />
