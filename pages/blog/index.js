@@ -35,7 +35,7 @@ export default function BlogPage() {
                 <li key={post._id}>
                   <article className='flex flex-col group'>
                     <div className='relative'>
-                      <Link href={`blog/${post.slug.current}`}>
+                      <Link href={`/blog/${post.slug.current}`}>
                         <a>
                           <Image
                             src={post.cover.asset.url}
@@ -58,7 +58,7 @@ export default function BlogPage() {
                       </p>
                     </div>
                     <div>
-                      <Link href={`blog/${post.slug.current}`}>
+                      <Link href={`/blog/${post.slug.current}`}>
                         <a>
                           <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500'>
                             {post.title}
