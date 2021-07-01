@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className='relative flex flex-col items-center justify-center py-16 border-t border-gray-200 md:py-24 lg:pt-32 lg:pb-20 bg-gray-50'>
       <div className='container'>
-        <section className='grid grid-cols-1 gap-5 pb-12 md:grid-cols-2 lg:grid-cols-3'>
+        <section className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
           <div className='flex flex-col text-sm'>
             <p className='text-sm font-medium tracking-wide text-gray-600 uppercase'>
               Sitemap
