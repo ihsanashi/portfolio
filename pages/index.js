@@ -56,13 +56,14 @@ export default function Home() {
                     className='relative h-full bg-white border border-gray-100 rounded-md group'
                   >
                     <div className='relative'>
-                      <Link href={`projects/${project.slug.current}`}>
+                      <Link href={`/projects/${project.slug.current}`}>
                         <a>
                           <Image
                             className='rounded-t-md'
                             src={project.image.asset.url}
                             alt={`Photo of the project ${project.title}`}
                             layout='responsive'
+                            objectFit='cover'
                             width={330}
                             height={200}
                           />
@@ -70,7 +71,7 @@ export default function Home() {
                       </Link>
                     </div>
                     <div className='flex flex-col p-5'>
-                      <Link href={`projects/${project.slug.current}`}>
+                      <Link href={`/projects/${project.slug.current}`}>
                         <a>
                           <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500'>
                             {project.title}
@@ -104,7 +105,7 @@ export default function Home() {
                         </ul>
                       )}
                       <div className='flex flex-row items-center justify-start mt-10 group'>
-                        <Link href={`projects/${project.slug.current}`}>
+                        <Link href={`/projects/${project.slug.current}`}>
                           <a className='inline-flex flex-row items-center text-sm font-medium tracking-wider transition duration-500 ease-in-out transform text-primary-600 hover:text-primary-300 hover:translate-x-1'>
                             Explore
                             <BiRightArrowAlt className='ml-1.5' size={18} />
@@ -124,10 +125,10 @@ export default function Home() {
             {/* begin: grid container */}
             <div className='grid max-w-4xl grid-cols-1 mx-auto lg:grid-cols-2 bg-accent-25'>
               <div className='order-2 px-12 py-12 font-sans lg:py-24 lg:pl-24 lg:order-1'>
-                <h6 className='inline-block pb-1 mb-5 text-base font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400'>
+                <h6 className='inline-block pb-1 text-base font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400'>
                   About
                 </h6>
-                <h5 className='font-serif text-2xl font-medium text-gray-700 mb-7.5'>
+                <h5 className='my-5 font-serif text-2xl font-medium text-gray-700'>
                   Hello there, I'm Ihsan
                 </h5>
                 <PortableText
@@ -135,7 +136,7 @@ export default function Home() {
                   serializers={{
                     normal: (props) => (
                       <p
-                        className='text-base text-gray-800 md:text-lg'
+                        className='text-base leading-relaxed text-gray-800 md:text-lg'
                         {...props}
                       />
                     ),
