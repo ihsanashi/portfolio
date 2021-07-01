@@ -14,6 +14,7 @@ This is a repo for my latest development portfolio, built with React and Next.js
 
 - React and Next.js for UI, utilising getStaticProps (static generation, fetch data at build time) and getServerSideProps (server-side rendering, fetch data at request time). *next-sanity-image* was used for image optimisation.
 - sanity/client library for fetching content from the Sanity CMS, and *react-portable-text* library for rendering rich text
+- Apollo-client and GraphQL was used to query the data from Sanity
 - Tailwind CSS was used for styling
 - *moment* library for formatting dates and times
 - Material UI for rendering the Timeline component for showcasing my work experience
