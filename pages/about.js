@@ -21,7 +21,8 @@ export default function AboutPage() {
   const workIconSize = 16;
 
   const workLeftFlexItemContainer =
-    'flex flex-row items-start md:items-center justify-end mb-2.5';
+    'flex flex-col md:flex-row items-end md:items-start md:items-center justify-end mb-2.5';
+  const workLeftFlexChildText = 'mt-1.5 text-gray-600 md:ml-1 text-sm';
 
   const { loading, error, data } = useQuery(GET_ABOUT_DATA);
 
@@ -64,7 +65,7 @@ export default function AboutPage() {
                   serializers={{
                     h5: (props) => (
                       <h5
-                        className='font-sans text-xl leading-relaxed text-gray-800 md:text-2xl'
+                        className='font-sans text-xl leading-10 text-gray-800 md:text-2xl'
                         {...props}
                       />
                     ),
@@ -89,7 +90,7 @@ export default function AboutPage() {
                   serializers={{
                     normal: (props) => (
                       <p
-                        className='text-base text-gray-200 md:text-lg'
+                        className='text-base leading-7 text-gray-200 md:text-lg md:leading-8'
                         {...props}
                       />
                     ),
@@ -118,7 +119,7 @@ export default function AboutPage() {
                               className={workIconStyles}
                               size={workIconSize}
                             />
-                            <p className='text-xs text-gray-600 md:text-sm'>{`${moment(
+                            <p className={workLeftFlexChildText}>{`${moment(
                               stint.startDate
                             ).format('MMM YYYY')} - ${
                               stint.isCurrentJob
@@ -131,7 +132,7 @@ export default function AboutPage() {
                               className={workIconStyles}
                               size={workIconSize}
                             />
-                            <p className='text-xs text-gray-600 md:text-sm'>
+                            <p className={workLeftFlexChildText}>
                               {stint.location}
                             </p>
                           </div>
@@ -140,7 +141,7 @@ export default function AboutPage() {
                               className={workIconStyles}
                               size={workIconSize}
                             />
-                            <p className='text-xs text-gray-600 md:text-sm'>
+                            <p className={workLeftFlexChildText}>
                               {stint.employmentType}
                             </p>
                           </div>
@@ -184,7 +185,7 @@ export default function AboutPage() {
                   {skills.map((item) => (
                     <li
                       key={item._key}
-                      className='mr-2.5 mb-2 px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded-md'
+                      className='mr-2.5 mb-2 px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded-md text-sm md:text-base'
                     >
                       {item.title}
                     </li>
