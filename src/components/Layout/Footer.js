@@ -7,7 +7,7 @@ import { TechStack } from '../../Tech';
 export default function Footer() {
   return (
     <footer className='relative flex flex-col items-center justify-center py-16 border-t border-gray-200 md:py-24 lg:pt-32 lg:pb-20 bg-gray-50'>
-      <div className='container'>
+      <div className='container max-w-5xl mx-auto'>
         <section className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
           <div className='flex flex-col text-sm'>
             <p className='text-sm font-medium tracking-wide text-gray-600 uppercase'>
@@ -29,7 +29,7 @@ export default function Footer() {
             <p className='text-sm font-medium tracking-wide text-gray-600 uppercase'>
               Built with
             </p>
-            <ul className='grid grid-cols-3 mt-2 md:grid-cols-5'>
+            <ul className='grid grid-cols-2 mt-2 md:grid-cols-3'>
               {TechStack.map((item, index) => (
                 <li key={index} className='mb-2 mr-2'>
                   <a
