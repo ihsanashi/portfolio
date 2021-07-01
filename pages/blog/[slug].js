@@ -10,6 +10,7 @@ import moment from 'moment';
 import PortableText from 'react-portable-text';
 import { BiFolderOpen, BiCalendarEdit, BiHash } from 'react-icons/bi';
 import { initializeApollo } from '../../lib/apolloClient';
+import { portableTextSerializer } from '../../lib/portableTextSerializer';
 
 export default function SinglePostPage() {
   const router = useRouter();
@@ -61,20 +62,16 @@ export default function SinglePostPage() {
             />
           </div>
           <div className='container'>
-            <div className='w-full max-w-5xl mx-auto'>
-              <div className='grid grid-cols-1 gap-y-8 md:gap-y-16 lg:gap-y-24 gap-x-5 lg:grid-cols-12'>
-                <div className='order-2 col-span-1 lg:order-1 lg:col-span-3'>
+            <div className='w-full max-w-4xl mx-auto'>
+              <div className='grid grid-cols-1 gap-y-8 md:gap-y-16 lg:gap-y-24'>
+                <PortableText
+                  content={post.bodyRaw}
+                  serializers={portableTextSerializer}
+                />
+                <div className='grid grid-cols-1 gap-2.5 lg:gap-5 md:grid-cols-3'>
                   <div className='flex flex-row flex-wrap items-center font-sans text-sm text-gray-600 mb-2.5'>
                     <BiFolderOpen size={16} />
                     <p className='font-medium ml-1.5'>{post.category.title}</p>
-                  </div>
-                  <div className='flex flex-row flex-wrap items-center font-sans font-light text-sm text-gray-600 mb-2.5'>
-                    <BiCalendarEdit size={16} />
-                    <p className='ml-1.5'>
-                      {`Updated ${moment(post._updatedAt).format(
-                        'D MMM YYYY, h:mm a'
-                      )}`}
-                    </p>
                   </div>
                   <div className='flex flex-row flex-wrap items-center font-sans font-light text-sm text-gray-600 mb-2.5'>
                     <BiHash size={16} />
@@ -84,9 +81,14 @@ export default function SinglePostPage() {
                       ))}
                     </ul>
                   </div>
-                </div>
-                <div className='order-1 col-span-1 lg:col-start-4 lg:col-span-full lg:order-2'>
-                  <PortableText content={post.bodyRaw} />
+                  <div className='flex flex-row flex-wrap items-center font-sans font-light text-sm text-gray-600 mb-2.5'>
+                    <BiCalendarEdit size={16} />
+                    <p className='ml-1.5'>
+                      {`Updated ${moment(post._updatedAt).format(
+                        'D MMM YYYY, h:mm a'
+                      )}`}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -10,6 +10,7 @@ import { BiLink, BiCaretRight } from 'react-icons/bi';
 import moment from 'moment';
 import PortableText from 'react-portable-text';
 import { initializeApollo } from '../../lib/apolloClient';
+import { portableTextSerializer } from '../../lib/portableTextSerializer';
 
 export default function SingleProjectPage() {
   const router = useRouter();
@@ -60,20 +61,21 @@ export default function SingleProjectPage() {
                       className='inline-flex flex-row items-center mb-5'
                     >
                       <BiCaretRight size={16} />
-                      <li className='list-item list-none ml-1.5 text-gray-600 hover:text-primary-500'>
+                      <li className='list-item list-none ml-1.5 text-gray-600 hover:text-primary-500 transition duration-500 ease-in-out transform hover:translate-x-1'>
                         {item.title}
                       </li>
                     </a>
                   ))}
                 </ul>
               </div>
-              <div className='relative'>
+              <div className='relative rounded-md'>
                 <Image
+                  className='rounded-md'
                   src={project.image.asset.url}
                   layout='responsive'
-                  objectFit='cover'
-                  height={400}
-                  width={710}
+                  objectFit='contain'
+                  width={750}
+                  height={560}
                 />
               </div>
             </div>
@@ -82,24 +84,14 @@ export default function SingleProjectPage() {
         {/* end: hero */}
 
         {/* begin: content */}
-        <section className='mt-36'>
+        <section className='mt-20 md:mt-28 lg:mt-36'>
           <div className='bg-gray-50'>
             <div className='container'>
               <div className='max-w-3xl mx-auto'>
                 <div className='py-20 md:py-32 lg:py-40'>
                   <PortableText
                     content={project.bodyRaw}
-                    serializers={{
-                      ul: (props) => (
-                        <ul className='list-disc list-inside' {...props} />
-                      ),
-                      normal: (props) => (
-                        <p
-                          className='font-sans text-base font-normal text-gray-700'
-                          {...props}
-                        />
-                      ),
-                    }}
+                    serializers={portableTextSerializer}
                   />
                 </div>
               </div>
@@ -110,25 +102,25 @@ export default function SingleProjectPage() {
 
         {/* begin: misc details */}
         <section>
-          <div className='bg-gray-900 px-7.5 py-12 md:px-12 md:py-24'>
+          <div className='bg-gray-900 px-5 py-8 md:px-7.5 md:py-12 lg:px-12 lg:py-24'>
             <div className='container'>
               <ul className='grid grid-cols-2 gap-5 lg:grid-cols-4'>
                 <li>
-                  <p className='text-sm md:text-base text-gray-100 font-normal mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-300 font-light mb-2.5'>
                     Stack
                   </p>
-                  <h6 className='text-lg font-normal text-white'>
+                  <h6 className='text-base font-normal text-white lg:text-lg'>
                     {project.technologies && project.technologies.join(', ')}
                   </h6>
                 </li>
                 <li>
-                  <p className='text-sm md:text-base text-gray-100 font-normal mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-300 font-light mb-2.5'>
                     Tags
                   </p>
-                  <ul className='flex flex-row list-none'>
+                  <ul className='flex flex-row flex-wrap list-none'>
                     {project.tags.map((item, index) => (
-                      <li key={index} className='mr-2'>
-                        <p className='text-base text-white font-normal inline-block p-1.5 rounded-sm border border-gray-700'>
+                      <li key={index} className='mb-2 mr-2'>
+                        <p className='text-sm lg:text-base text-white font-normal inline-block p-1.5 rounded-sm border border-gray-700'>
                           {item}
                         </p>
                       </li>
@@ -136,25 +128,23 @@ export default function SingleProjectPage() {
                   </ul>
                 </li>
                 <li>
-                  <p className='text-sm md:text-base text-gray-100 font-normal mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-300 font-light mb-2.5'>
                     Duration
                   </p>
-                  <h6 className='text-lg font-normal text-white'>
+                  <h6 className='text-base font-normal text-white lg:text-lg'>
                     {project.completed
                       ? `${moment(project.startDate).format(
-                          'Do MMM YYYY'
-                        )} — ${moment(project.finishDate).format(
-                          'Do MMM YYYY'
-                        )}`
+                          'MMM YYYY'
+                        )} — ${moment(project.finishDate).format('MMM YYYY')}`
                       : 'Ongoing'}
                   </h6>
                 </li>
                 <li>
-                  <p className='text-sm md:text-base text-gray-100 font-normal mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-300 font-light mb-2.5'>
                     Last updated
                   </p>
-                  <h6 className='text-lg font-normal text-white'>
-                    {`${moment(project._updatedAt).format('Do MMM YYYY')}`}
+                  <h6 className='text-base font-normal text-white lg:text-lg'>
+                    {`${moment(project._updatedAt).format('Do MMMM YYYY')}`}
                   </h6>
                 </li>
               </ul>
