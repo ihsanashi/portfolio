@@ -121,10 +121,10 @@ export default function Home() {
           {/* end: new project section */}
 
           {/* begin: about summary */}
-          <section className='my-20 md:my-36'>
+          <section className='my-28 md:my-36'>
             {/* begin: grid container */}
-            <div className='grid max-w-4xl grid-cols-1 mx-auto lg:grid-cols-2 bg-accent-25'>
-              <div className='order-2 px-12 py-12 font-sans lg:py-24 lg:pl-24 lg:order-1'>
+            <div className='grid max-w-4xl grid-cols-1 mx-auto rounded-lg md:grid-cols-2 bg-accent-25'>
+              <div className='order-2 px-7.5 pb-7.5 font-sans md:p-12 lg:py-24 lg:pl-24 md:order-1'>
                 <h6 className='inline-block pb-1 text-base font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400'>
                   About
                 </h6>
@@ -148,7 +148,7 @@ export default function Home() {
                   </a>
                 </Link>
               </div>
-              <div className='static order-1 p-5 md:p-12 lg:p-0 lg:relative lg:top-32 lg:left-24 lg:order-2'>
+              <div className='relative order-1 px-10 pb-2.5 -top-8 md:p-5 lg:p-4 md:top-32 md:left-8 lg:left-16 xl:left-24 md:order-2'>
                 <img
                   src='./home-about.jpg'
                   alt='Placeholder image'
