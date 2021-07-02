@@ -30,6 +30,9 @@ export default function BlogPage() {
       <Layout>
         <section className='my-20 md:my-36'>
           <div className='container'>
+            <h6 className='pb-10 text-lg font-bold text-center text-gray-800 uppercase md:hidden'>
+              Blog Posts
+            </h6>
             <ul className='grid grid-cols-1 gap-x-5 gap-y-12 md:grid-cols-2 lg:grid-cols-3'>
               {data.allPost.map((post) => (
                 <li key={post._id}>
@@ -38,6 +41,7 @@ export default function BlogPage() {
                       <Link href={`/blog/${post.slug.current}`}>
                         <a>
                           <Image
+                            className='rounded-md'
                             src={post.cover.asset.url}
                             alt={post.cover.asset.altText}
                             layout='responsive'

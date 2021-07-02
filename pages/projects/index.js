@@ -29,6 +29,9 @@ export default function ProjectsPage() {
       <Layout>
         <section className='my-20 md:my-36'>
           <div className='container'>
+            <h6 className='pb-10 text-lg font-bold text-center text-gray-800 uppercase md:hidden'>
+              Projects
+            </h6>
             <ul className='grid grid-cols-1 gap-x-5 gap-y-12 md:grid-cols-2 lg:grid-cols-3'>
               {data.allProject.map((project) => (
                 <li
