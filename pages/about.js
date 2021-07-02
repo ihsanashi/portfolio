@@ -80,97 +80,93 @@ export default function AboutPage() {
         {/* begin: personal content */}
         <section className='md:mt-20 lg:mt-36'>
           <div className='py-24 bg-primary-800'>
-            <div className='container'>
-              <div className='max-w-xl mx-auto'>
-                <h6 className='inline-block pb-1 mb-5 text-base font-normal tracking-widest text-gray-200 uppercase border-b-2 border-accent-400'>
-                  Personal
-                </h6>
-                <PortableText
-                  content={personalBodyRaw}
-                  serializers={{
-                    normal: (props) => (
-                      <p
-                        className='text-base leading-7 text-gray-200 md:text-lg md:leading-8'
-                        {...props}
-                      />
-                    ),
-                  }}
-                />
-              </div>
+            <div className='container max-w-2xl mx-auto'>
+              <h6 className='inline-block pb-1 mb-5 text-base font-normal tracking-widest text-gray-200 uppercase border-b-2 border-accent-400'>
+                Personal
+              </h6>
+              <PortableText
+                content={personalBodyRaw}
+                serializers={{
+                  normal: (props) => (
+                    <p
+                      className='text-base leading-7 text-gray-200 md:text-lg md:leading-8'
+                      {...props}
+                    />
+                  ),
+                }}
+              />
             </div>
           </div>
         </section>
         {/* end: personal content */}
         {/* begin: work experience content */}
         <section>
-          <div className='py-24 bg-gray-100'>
-            <div className='container'>
+          <div className='py-24 bg-gray-50'>
+            <div className='container max-w-2xl mx-auto'>
               <h6 className='inline-block pb-1 text-base font-normal tracking-widest text-gray-700 uppercase border-b-2 border-accent-400 mb-7.5'>
                 Work Experience
               </h6>
-              <div className='max-w-full mx-auto md:max-w-2xl'>
-                <Timeline>
-                  {workExperience.map((stint) => (
-                    <TimelineItem key={stint._key}>
-                      <TimelineOppositeContent>
-                        <div>
-                          <div className={workLeftFlexItemContainer}>
-                            <BiCalendar
-                              className={workIconStyles}
-                              size={workIconSize}
-                            />
-                            <p className={workLeftFlexChildText}>{`${moment(
-                              stint.startDate
-                            ).format('MMM YYYY')} - ${
-                              stint.isCurrentJob
-                                ? 'Present'
-                                : moment(stint.finishDate).format('MMM YYYY')
-                            }`}</p>
-                          </div>
-                          <div className={workLeftFlexItemContainer}>
-                            <BiMap
-                              className={workIconStyles}
-                              size={workIconSize}
-                            />
-                            <p className={workLeftFlexChildText}>
-                              {stint.location}
-                            </p>
-                          </div>
-                          <div className={workLeftFlexItemContainer}>
-                            <BiBriefcase
-                              className={workIconStyles}
-                              size={workIconSize}
-                            />
-                            <p className={workLeftFlexChildText}>
-                              {stint.employmentType}
-                            </p>
-                          </div>
+              <Timeline>
+                {workExperience.map((stint) => (
+                  <TimelineItem key={stint._key}>
+                    <TimelineOppositeContent>
+                      <div>
+                        <div className={workLeftFlexItemContainer}>
+                          <BiCalendar
+                            className={workIconStyles}
+                            size={workIconSize}
+                          />
+                          <p className={workLeftFlexChildText}>{`${moment(
+                            stint.startDate
+                          ).format('MMM YYYY')} - ${
+                            stint.isCurrentJob
+                              ? 'Present'
+                              : moment(stint.finishDate).format('MMM YYYY')
+                          }`}</p>
                         </div>
-                      </TimelineOppositeContent>
-                      <TimelineSeparator>
-                        <TimelineDot
-                          color={stint.isCurrentJob ? 'primary' : 'grey'}
-                        />
-                        <TimelineConnector />
-                      </TimelineSeparator>
-                      <TimelineContent>
-                        <div className='mb-1.5 md:mb-2.5'>
-                          <span className='font-sans text-lg font-medium text-gray-900'>
-                            {stint.jobTitle}
-                          </span>
-                          {' - '}
-                          <span className='font-sans text-base font-light text-gray-700'>
-                            {stint.employer}
-                          </span>
+                        <div className={workLeftFlexItemContainer}>
+                          <BiMap
+                            className={workIconStyles}
+                            size={workIconSize}
+                          />
+                          <p className={workLeftFlexChildText}>
+                            {stint.location}
+                          </p>
                         </div>
-                        <p className='text-sm leading-relaxed text-gray-800 md:text-base'>
-                          {stint.description}
-                        </p>
-                      </TimelineContent>
-                    </TimelineItem>
-                  ))}
-                </Timeline>
-              </div>
+                        <div className={workLeftFlexItemContainer}>
+                          <BiBriefcase
+                            className={workIconStyles}
+                            size={workIconSize}
+                          />
+                          <p className={workLeftFlexChildText}>
+                            {stint.employmentType}
+                          </p>
+                        </div>
+                      </div>
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                      <TimelineDot
+                        color={stint.isCurrentJob ? 'primary' : 'grey'}
+                      />
+                      <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      <div className='mb-1.5 md:mb-2.5'>
+                        <span className='font-sans text-lg font-medium text-gray-900'>
+                          {stint.jobTitle}
+                        </span>
+                        {' - '}
+                        <span className='font-sans text-base font-light text-gray-700'>
+                          {stint.employer}
+                        </span>
+                      </div>
+                      <p className='text-sm leading-relaxed text-gray-800 md:text-base'>
+                        {stint.description}
+                      </p>
+                    </TimelineContent>
+                  </TimelineItem>
+                ))}
+              </Timeline>
             </div>
           </div>
         </section>
@@ -178,22 +174,20 @@ export default function AboutPage() {
         {/* begin: skills content */}
         <section>
           <div className='py-24 bg-white'>
-            <div className='container'>
+            <div className='container max-w-2xl mx-auto'>
               <h6 className='inline-block pb-1 text-base font-normal tracking-widest text-gray-800 uppercase border-b-2 border-accent-400 mb-7.5'>
                 Skills
               </h6>
-              <div className='max-w-lg'>
-                <ul className='flex flex-row flex-wrap'>
-                  {skills.map((item) => (
-                    <li
-                      key={item._key}
-                      className='mr-2.5 mb-2 px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded-md text-sm md:text-base'
-                    >
-                      {item.title}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul className='flex flex-row flex-wrap'>
+                {skills.map((item) => (
+                  <li
+                    key={item._key}
+                    className='mr-2.5 mb-2 px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded-md text-sm md:text-base'
+                  >
+                    {item.title}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
