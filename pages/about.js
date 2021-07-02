@@ -22,7 +22,7 @@ export default function AboutPage() {
 
   const workLeftFlexItemContainer =
     'flex flex-col md:flex-row items-end md:items-start md:items-center justify-end mb-2.5';
-  const workLeftFlexChildText = 'mt-1.5 text-gray-600 md:ml-1 text-sm';
+  const workLeftFlexChildText = 'mt-1.5 md:mt-0 text-gray-600 md:ml-1 text-sm';
 
   const { loading, error, data } = useQuery(GET_ABOUT_DATA);
 
@@ -148,11 +148,13 @@ export default function AboutPage() {
                         </div>
                       </TimelineOppositeContent>
                       <TimelineSeparator>
-                        <TimelineDot />
+                        <TimelineDot
+                          color={stint.isCurrentJob ? 'primary' : 'grey'}
+                        />
                         <TimelineConnector />
                       </TimelineSeparator>
                       <TimelineContent>
-                        <div className='mb-2.5'>
+                        <div className='mb-1.5 md:mb-2.5'>
                           <span className='font-sans text-lg font-medium text-gray-900'>
                             {stint.jobTitle}
                           </span>
