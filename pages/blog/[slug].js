@@ -10,7 +10,7 @@ import moment from 'moment';
 import PortableText from 'react-portable-text';
 import { BiFolderOpen, BiCalendarEdit, BiHash } from 'react-icons/bi';
 import { initializeApollo } from '../../lib/apolloClient';
-import { portableTextSerializer } from '../../lib/portableTextSerializer';
+import { portableTextSerializer } from '../../src/PortableTextSerializer';
 
 export default function SinglePostPage() {
   const router = useRouter();

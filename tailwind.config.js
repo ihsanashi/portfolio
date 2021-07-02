@@ -3,7 +3,8 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
   purge: [
     './pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './lib/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
   theme: {

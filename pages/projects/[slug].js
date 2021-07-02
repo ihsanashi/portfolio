@@ -10,7 +10,7 @@ import { BiLink, BiCaretRight } from 'react-icons/bi';
 import moment from 'moment';
 import PortableText from 'react-portable-text';
 import { initializeApollo } from '../../lib/apolloClient';
-import { portableTextSerializer } from '../../lib/portableTextSerializer';
+import { portableTextSerializer } from '../../src/PortableTextSerializer';
 
 export default function SingleProjectPage() {
   const router = useRouter();
