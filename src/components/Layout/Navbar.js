@@ -80,10 +80,10 @@ export default function Navbar() {
                   >
                     <Link href={filtered.link}>
                       <a
-                        className={`px-5 py-2 border rounded-md hover:text-white hover:bg-primary-500 border-primary-500 transition duration-500 ease-in-out text-center transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base w-full ${
+                        className={`px-5 py-2 border rounded-md hover:text-white hover:bg-primary-500 transition duration-500 ease-in-out text-center transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base w-full ${
                           router.pathname === filtered.link
-                            ? 'bg-primary-500 text-primary-50 md:bg-primary-100 md:text-primary-600'
-                            : 'bg-white text-primary-500'
+                            ? 'bg-primary-500 text-primary-50 md:bg-white border-gray-300 md:text-primary-600'
+                            : 'bg-white text-primary-500 border-primary-500'
                         }`}
                       >
                         {filtered.title}
