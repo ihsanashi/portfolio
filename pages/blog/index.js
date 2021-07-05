@@ -26,7 +26,6 @@ export default function BlogPage() {
         />
       </Head>
 
-      {/* begin: Layout component */}
       <Layout>
         <section className='my-20 md:my-36'>
           <div className='container'>
@@ -86,7 +85,6 @@ export default function BlogPage() {
           </div>
         </section>
       </Layout>
-      {/* end: Layout component */}
     </>
   );
 }

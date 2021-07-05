@@ -45,11 +45,10 @@ export default function AboutPage() {
         <title>{title}</title>
         <meta name='description' content={description} />
       </Head>
-      {/* begin: Layout component */}
+
       <Layout>
         <section className='my-20 md:my-36'>
           <div className='container'>
-            {/* begin: hero */}
             <div className='grid grid-cols-1 gap-5 md:grid-cols-8 lg:grid-cols-12'>
               <div className='pt-3 md:col-span-3 lg:col-span-5'>
                 <h6 className='mb-5 font-sans text-lg font-medium tracking-wider uppercase md:text-xl'>
@@ -73,11 +72,9 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-            {/* end: hero */}
           </div>
         </section>
 
-        {/* begin: personal content */}
         <section className='md:mt-20 lg:mt-36'>
           <div className='py-24 bg-primary-800'>
             <div className='container max-w-2xl mx-auto'>
@@ -98,8 +95,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-        {/* end: personal content */}
-        {/* begin: work experience content */}
+
         <section>
           <div className='py-24 bg-gray-50'>
             <div className='container max-w-2xl mx-auto'>
@@ -170,8 +166,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-        {/* end: work experience content */}
-        {/* begin: skills content */}
+
         <section>
           <div className='py-24 bg-white'>
             <div className='container max-w-2xl mx-auto'>
@@ -191,9 +186,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-        {/* end: skills content */}
       </Layout>
-      {/* end: Layout component */}
     </>
   );
 }

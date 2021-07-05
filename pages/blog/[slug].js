@@ -33,9 +33,7 @@ export default function SinglePostPage() {
         <meta name='description' content={post.description} />
       </Head>
 
-      {/* begin: Layout component */}
       <Layout>
-        {/* begin: post content */}
         <section className='my-20 md:my-36'>
           <div className='container max-w-xl mx-auto'>
             <p className='font-sans text-base font-light text-center text-gray-500'>{`Posted ${moment(
@@ -90,9 +88,7 @@ export default function SinglePostPage() {
             </div>
           </div>
         </section>
-        {/* end: post content */}
       </Layout>
-      {/* end: Layout component */}
     </>
   );
 }

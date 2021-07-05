@@ -53,11 +53,10 @@ export default function ContactPage() {
         <title>{title}</title>
         <meta name='description' content={description} />
       </Head>
-      {/* begin: Layout component */}
+
       <Layout>
         <section className='my-20 md:my-36'>
           <div className='container'>
-            {/* begin: hero */}
             <div className='max-w-lg mx-auto'>
               <div>
                 <div className='text-center'>
@@ -98,17 +97,15 @@ export default function ContactPage() {
                 )}
               </div>
             </div>
-            {/* end: hero */}
           </div>
         </section>
-        {/* begin: separator */}
+
         <section className='my-20 md:my-36'>
           <div className='container'>
             <div className='w-32 mx-auto border-t-2 border-primary-100'></div>
           </div>
         </section>
-        {/* end: separator */}
-        {/* begin: contact form */}
+
         <section className='my-20 md:my-36'>
           <div className='container'>
             <div className='max-w-lg mx-auto'>
@@ -204,9 +201,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-        {/* end: contact form */}
       </Layout>
-      {/* end: Layout component */}
     </>
   );
 }

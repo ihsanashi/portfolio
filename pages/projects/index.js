@@ -25,7 +25,6 @@ export default function ProjectsPage() {
         />
       </Head>
 
-      {/* begin: Layout component */}
       <Layout>
         <section className='my-20 md:my-36'>
           <div className='container'>
@@ -103,7 +102,6 @@ export default function ProjectsPage() {
           </div>
         </section>
       </Layout>
-      {/* end: Layout component */}
     </>
   );
 }

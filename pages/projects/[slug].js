@@ -33,9 +33,7 @@ export default function SingleProjectPage() {
         <meta name='description' content={project.description} />
       </Head>
 
-      {/* begin: Layout component */}
       <Layout>
-        {/* begin: hero */}
         <section className='my-20 md:my-36'>
           <div className='container'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-x-7.5'>
@@ -81,9 +79,7 @@ export default function SingleProjectPage() {
             </div>
           </div>
         </section>
-        {/* end: hero */}
 
-        {/* begin: content */}
         <section className='mt-20 md:mt-28 lg:mt-36'>
           <div className='bg-gray-50'>
             <div className='container'>
@@ -98,9 +94,7 @@ export default function SingleProjectPage() {
             </div>
           </div>
         </section>
-        {/* end: content */}
 
-        {/* begin: misc details */}
         <section>
           <div className='bg-gray-900 px-5 py-8 md:px-7.5 md:py-12 lg:px-12 lg:py-24'>
             <div className='container'>
@@ -151,9 +145,7 @@ export default function SingleProjectPage() {
             </div>
           </div>
         </section>
-        {/* end: misc details */}
       </Layout>
-      {/* end: Layout component */}
     </>
   );
 }
