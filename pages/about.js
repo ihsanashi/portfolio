@@ -86,7 +86,28 @@ export default function AboutPage() {
                 serializers={{
                   normal: (props) => (
                     <p
-                      className='text-base leading-7 text-gray-200 md:text-lg md:leading-8'
+                      className='text-base leading-7 text-gray-300 md:leading-8'
+                      {...props}
+                    />
+                  ),
+                  strong: (props) => (
+                    <strong
+                      className='font-sans font-semibold text-white'
+                      {...props}
+                    />
+                  ),
+                  ul: (props) => (
+                    <ul className='list-disc list-inside' {...props} />
+                  ),
+                  li: (props) => (
+                    <li
+                      className='text-base leading-7 text-gray-300 md:leading-8'
+                      {...props}
+                    />
+                  ),
+                  blockquote: (props) => (
+                    <blockquote
+                      className='py-8 pl-5 text-base border-l md:text-lg border-accent-400 text-accent-400'
                       {...props}
                     />
                   ),
