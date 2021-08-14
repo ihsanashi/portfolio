@@ -27,9 +27,9 @@ export default function BlogPage() {
       </Head>
 
       <Layout>
-        <section className='my-20 md:my-36'>
+        <section className='py-20 md:py-36'>
           <div className='container'>
-            <h6 className='pb-10 text-lg font-bold text-center text-gray-800 uppercase md:hidden'>
+            <h6 className='pb-10 text-lg font-bold text-center text-gray-800 uppercase dark:text-gray-200 md:hidden'>
               Blog Posts
             </h6>
             <ul className='grid grid-cols-1 gap-x-5 gap-y-12 md:grid-cols-2 lg:grid-cols-3'>
@@ -51,27 +51,30 @@ export default function BlogPage() {
                       </Link>
                     </div>
                     <div className='flex flex-row flex-wrap items-center my-2.5 font-sans group text-sm'>
-                      <BiFolderOpen className='text-gray-400' size={16} />
-                      <p className='text-gray-600 font-medium ml-1.5'>
+                      <BiFolderOpen
+                        className='text-gray-500 dark:text-gray-400'
+                        size={16}
+                      />
+                      <p className='text-gray-600 dark:text-gray-400 font-normal ml-1.5'>
                         {post.category.title}
                       </p>
-                      <p className='text-gray-300 font-light mx-1.5'>{` • `}</p>
-                      <p className='font-light text-gray-600'>
+                      <p className='text-gray-300 dark:text-gray-500 font-light mx-1.5'>{` • `}</p>
+                      <p className='font-normal text-gray-600 dark:text-gray-400'>
                         {moment(post.publishedAt).format('D MMM YYYY, h:mm a')}
                       </p>
                     </div>
                     <div>
                       <Link href={`/blog/${post.slug.current}`}>
                         <a>
-                          <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500'>
+                          <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl dark:text-gray-100 dark:hover:text-primary-400 group-hover:text-primary-500'>
                             {post.title}
                           </h4>
                           <div className='flex flex-row flex-wrap items-center group mt-2.5'>
-                            <p className='text-sm leading-normal text-gray-600 md:text-base'>
+                            <p className='text-sm font-normal leading-normal text-gray-600 dark:text-gray-400 md:text-base'>
                               {post.description}
                             </p>
                             <BiRightArrowAlt
-                              className='text-gray-400 border border-transparent rounded-full group-hover:border-primary-500 group-hover:text-primary-500 ml-1.5 transition duration-300 ease-in-out'
+                              className='text-gray-400 border border-transparent rounded-full dark:group-hover:border-primary-400 group-hover:border-primary-500 dark:group-hover:text-primary-400 group-hover:text-primary-500 ml-1.5 transition duration-300 ease-in-out'
                               size={20}
                             />
                           </div>

@@ -25,10 +25,10 @@ export default function Home() {
 
       <Layout>
         <div className='container'>
-          <section className='my-20 md:my-36'>
+          <section className='py-12 md:py-24'>
             <div className='max-w-xl mx-auto font-sans'>
-              <h5 className='mt-3 mb-5 text-2xl font-medium text-center text-gray-900'>
-                <span className='font-serif text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300'>
+              <h5 className='mt-3 mb-5 text-2xl font-medium text-center text-gray-900 dark:text-gray-200'>
+                <span className='font-serif text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300 dark:from-primary-300 dark:via-primary-500 dark:to-primary-700'>
                   Ahmad Ihsan
                 </span>{' '}
                 is a Frontend Developer and UX/UI Designer from Kuala Lumpur,
@@ -37,15 +37,15 @@ export default function Home() {
             </div>
           </section>
 
-          <section className='my-20 md:my-36'>
-            <h5 className='inline-block pb-1 mb-10 text-lg font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400'>
+          <section className='py-10 md:py-16'>
+            <h5 className='inline-block pb-1 mb-10 text-lg font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400 dark:text-gray-100'>
               Projects
             </h5>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-12'>
               {data.allProject.map((project) => (
                 <article
                   key={project._id}
-                  className='relative h-full bg-white border border-gray-100 rounded-md group'
+                  className='relative h-full bg-white border border-gray-100 rounded-md dark:border-gray-900 dark:bg-black group'
                 >
                   <div className='relative'>
                     <Link href={`/projects/${project.slug.current}`}>
@@ -65,10 +65,10 @@ export default function Home() {
                   <div className='flex flex-col p-5'>
                     <Link href={`/projects/${project.slug.current}`}>
                       <a>
-                        <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500'>
+                        <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500 dark:text-gray-100 dark:group-hover:text-primary-400'>
                           {project.title}
                         </h4>
-                        <p className='text-sm leading-normal text-gray-600 md:text-base mt-2.5 mb-7.5'>
+                        <p className='text-sm leading-normal text-gray-600 dark:text-gray-400 md:text-base mt-2.5 mb-7.5'>
                           {project.summary}
                         </p>
                       </a>
@@ -82,12 +82,8 @@ export default function Home() {
                               target='_blank'
                               className={`px-4 py-2 inline-block rounded-md mr-3 font-medium text-base text-center ${
                                 item.title.toLowerCase() !== 'source code'
-                                  ? 'text-primary-600'
-                                  : 'text-gray-800'
-                              } ${
-                                item.title.toLowerCase() !== 'source code'
-                                  ? 'bg-primary-50 hover:bg-primary-100 transition duration-500 ease-in-out transform hover:-translate-y-0.5'
-                                  : 'bg-white hover:bg-gray-100 border border-gray-200 transition duration-500 ease-in-out transform hover:-translate-y-0.5'
+                                  ? 'text-primary-600 bg-primary-50 dark:bg-white dark:text-primary-500 dark:hover:bg-primary-600 dark:hover:text-white hover:bg-primary-100 transition duration-500 ease-in-out transform hover:-translate-y-0.5'
+                                  : 'text-gray-800 bg-white dark:bg-transparent dark:border-gray-600 dark:text-gray-400 dark:hover:border-gray-300 dark:hover:text-white hover:bg-gray-100 border border-gray-200 transition duration-500 ease-in-out transform hover:-translate-y-0.5'
                               }`}
                             >
                               {item.title}
@@ -98,7 +94,7 @@ export default function Home() {
                     )}
                     <div className='flex flex-row items-center justify-start mt-10 group'>
                       <Link href={`/projects/${project.slug.current}`}>
-                        <a className='inline-flex flex-row items-center text-sm font-medium tracking-wider transition duration-500 ease-in-out transform text-primary-600 hover:text-primary-300 hover:translate-x-1'>
+                        <a className='inline-flex flex-row items-center text-sm font-medium tracking-wider transition duration-500 ease-in-out transform text-primary-600 dark:text-primary-400 dark:hover:text-primary-200 hover:text-primary-300 hover:translate-x-1'>
                           Explore
                           <BiRightArrowAlt className='ml-1.5' size={18} />
                         </a>
@@ -110,13 +106,13 @@ export default function Home() {
             </div>
           </section>
 
-          <section className='my-28 md:my-36'>
-            <div className='grid max-w-4xl grid-cols-1 mx-auto rounded-lg md:grid-cols-2 bg-accent-25'>
+          <section className='py-14 md:py-20'>
+            <div className='grid max-w-4xl grid-cols-1 mx-auto rounded-lg md:grid-cols-2 bg-accent-25 dark:bg-primary-800'>
               <div className='order-2 px-7.5 pb-7.5 font-sans md:p-12 lg:py-24 lg:pl-24 md:order-1'>
-                <h6 className='inline-block pb-1 text-base font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400'>
+                <h6 className='inline-block pb-1 text-base font-normal tracking-widest text-gray-900 uppercase border-b-2 border-accent-400 dark:text-gray-100'>
                   About
                 </h6>
-                <h5 className='my-5 font-serif text-2xl font-medium text-gray-700'>
+                <h5 className='my-5 font-serif text-2xl font-medium text-gray-700 dark:text-gray-300'>
                   Hello there, I'm Ihsan
                 </h5>
                 <PortableText
@@ -124,14 +120,14 @@ export default function Home() {
                   serializers={{
                     normal: (props) => (
                       <p
-                        className='text-base leading-relaxed text-gray-800 md:text-lg'
+                        className='text-base leading-relaxed text-gray-800 dark:text-gray-200 md:text-lg'
                         {...props}
                       />
                     ),
                   }}
                 />
                 <Link href='/about'>
-                  <a className='inline-block mt-7.5 font-medium transition duration-500 ease-in-out transform text-primary-600 hover:text-primary-300 hover:translate-x-1'>
+                  <a className='inline-block mt-7.5 font-medium transition duration-500 ease-in-out transform text-primary-600 dark:text-primary-300 dark:hover:text-primary-200 hover:text-primary-300 hover:translate-x-1'>
                     Read more
                   </a>
                 </Link>
@@ -148,17 +144,17 @@ export default function Home() {
             </div>
           </section>
 
-          <section className='my-20 md:my-36'>
+          <section className='py-10 md:py-18'>
             <div className='max-w-xl p-8 mx-auto rounded-md lg:p-24'>
               <div className='text-center'>
-                <h3 className='font-serif text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-pink-500 to-red-500'>
+                <h3 className='font-serif text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-pink-500 to-red-500 dark:from-primary-300 dark:via-pink-400 dark:to-red-400'>
                   Want to reach out?
                 </h3>
-                <h6 className='mt-2.5 mb-7.5 text-lg text-gray-800'>
+                <h6 className='mt-2.5 mb-7.5 text-lg text-gray-800 dark:text-gray-300'>
                   I'm actively looking for a remote Frontend Developer role.
                 </h6>
                 <Link href='/contact'>
-                  <a className='inline-block px-5 py-3 font-medium rounded-md bg-primary-50 hover:bg-primary-500 text-primary-500 hover:text-white transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105'>
+                  <a className='inline-block px-5 py-3 font-medium rounded-md bg-primary-50 dark:bg-primary-700 hover:bg-primary-500 text-primary-500 dark:text-primary-300 dark:hover:bg-primary-600 dark:hover:text-white hover:text-white transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105'>
                     Let's connect
                   </a>
                 </Link>

@@ -27,7 +27,7 @@ export default function Navbar() {
   }, [width]);
 
   return (
-    <div className='sticky top-0 left-0 z-40 bg-white shadow-sm bg-opacity-95'>
+    <div className='sticky top-0 left-0 z-40 bg-white border-b border-gray-100 dark:bg-black dark:border-gray-900 bg-opacity-95'>
       <nav className='flex flex-none w-full py-4 mx-auto'>
         <div className='container'>
           <section className='flex items-center justify-between flex-none'>
@@ -47,7 +47,7 @@ export default function Navbar() {
               <ul
                 className={`${
                   isShow
-                    ? 'flex flex-col items-start justify-center fixed right-0 top-0 w-full h-full z-10 py-4 px-12 bg-primary-800'
+                    ? 'flex flex-col items-start justify-center fixed right-0 top-0 w-full h-full z-10 py-4 px-12 bg-gray-50 dark:bg-primary-900'
                     : 'hidden md:flex flex-row items-center justify-between'
                 }`}
               >
@@ -62,8 +62,8 @@ export default function Navbar() {
                       <a
                         className={`py-1 font-normal border-b border-transparent hover:text-primary-500 hover:border-primary-500 transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base ${
                           router.pathname === filtered.link
-                            ? 'text-primary-500'
-                            : 'text-gray-400 md:text-gray-500'
+                            ? 'text-primary-500 dark:text-primary-400'
+                            : 'text-gray-500 md:dark:text-gray-400'
                         }`}
                       >
                         {filtered.title}
@@ -80,10 +80,10 @@ export default function Navbar() {
                   >
                     <Link href={filtered.link}>
                       <a
-                        className={`px-5 py-2 border rounded-md hover:text-white hover:bg-primary-500 transition duration-500 ease-in-out text-center transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base w-full ${
+                        className={`px-5 py-2 border rounded-md transition duration-500 ease-in-out text-center transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base ${
                           router.pathname === filtered.link
-                            ? 'bg-primary-500 text-primary-50 md:bg-white border-gray-300 md:text-primary-600'
-                            : 'bg-white text-primary-500 border-primary-500'
+                            ? 'bg-primary-500 text-primary-50 md:bg-transparent border-gray-300 dark:border-gray-700 md:dark:text-primary-400 md:text-primary-600'
+                            : 'bg-white hover:text-white dark:bg-black hover:bg-primary-500 dark:hover:bg-primary-400 text-primary-500 border-primary-500'
                         }`}
                       >
                         {filtered.title}
@@ -98,9 +98,9 @@ export default function Navbar() {
                 className='absolute z-20 block text-3xl md:hidden top-4 right-6'
               >
                 {isShow ? (
-                  <BiX className='text-primary-300' />
+                  <BiX className='text-gray-400' />
                 ) : (
-                  <BiMenuAltRight className='text-primary-600' />
+                  <BiMenuAltRight className='text-primary-600 dark:text-primary-400' />
                 )}
               </button>
             </div>

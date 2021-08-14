@@ -55,18 +55,18 @@ export default function ContactPage() {
       </Head>
 
       <Layout>
-        <section className='my-20 md:my-36'>
+        <section className='py-20'>
           <div className='container'>
             <div className='max-w-lg mx-auto'>
               <div>
                 <div className='text-center'>
-                  <h6 className='text-xl uppercase text-primary-500'>
+                  <h6 className='text-xl uppercase text-primary-500 dark:text-primary-400'>
                     Contact
                   </h6>
-                  <h1 className='pt-3 pb-5 font-serif text-5xl font-bold'>
+                  <h1 className='pt-3 pb-5 font-serif text-5xl font-bold text-gray-900 dark:text-gray-100'>
                     Get in touch.
                   </h1>
-                  <h6 className='text-xl leading-relaxed text-gray-800'>
+                  <h6 className='text-xl font-normal leading-relaxed text-gray-600 dark:text-gray-400'>
                     Connect with me through my socials or use the contact form
                     below. If you prefer writing emails, there's an option
                     underneath here too.
@@ -75,14 +75,14 @@ export default function ContactPage() {
                 <div className='mt-12'>
                   <div className='flex flex-row items-stretch'>
                     <input
-                      className='inline w-full px-5 py-3 overflow-hidden border border-gray-200 rounded-l-md'
+                      className='inline w-full px-5 py-3 overflow-hidden text-gray-900 bg-white border border-gray-200 dark:text-gray-100 dark:bg-gray-900 dark:border-gray-800 rounded-l-md'
                       type='text'
                       value='hello@ahmadihsan.com'
                       ref={emailRef}
                       readOnly
                     />
                     <button
-                      className='inline-flex flex-row items-center px-5 py-3 text-white transition duration-500 ease-in-out bg-primary-400 hover:bg-primary-600 rounded-r-md'
+                      className='inline-flex flex-row items-center px-5 py-3 text-white transition duration-500 ease-in-out bg-primary-400 dark:bg-primary-600 dark:hover:bg-primary-500 hover:bg-primary-600 rounded-r-md'
                       onClick={copyToClipboard}
                     >
                       <BiCopy size={16} />
@@ -91,7 +91,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 {isCopied && (
-                  <p className='mt-7.5 max-w-max block mx-auto text-center text-sm bg-accent-200 text-accent-600 p-1.5 rounded-md transition duration-300 ease-in-out'>
+                  <p className='mt-7.5 max-w-max block mx-auto text-center text-sm bg-gray-200 dark:bg-gray-100 dark:text-gray-500 text-gray-600 p-1.5 rounded-md transition duration-300 ease-in-out'>
                     Copied to clipboard!
                   </p>
                 )}
@@ -100,20 +100,20 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className='my-20 md:my-36'>
+        <section className='py-20'>
           <div className='container'>
-            <div className='w-32 mx-auto border-t-2 border-primary-100'></div>
+            <div className='w-32 mx-auto border-t-2 border-primary-100 dark:border-primary-700'></div>
           </div>
         </section>
 
-        <section className='my-20 md:my-36'>
+        <section className='py-20'>
           <div className='container'>
             <div className='max-w-lg mx-auto'>
               <div className='text-center mb-14 md:mb-24'>
-                <h3 className='font-serif text-3xl font-bold text-primary-500'>
+                <h3 className='font-serif text-3xl font-bold text-primary-500 dark:text-primary-400'>
                   Drop me a line
                 </h3>
-                <h6 className='mt-5 font-sans text-xl text-gray-700'>
+                <h6 className='mt-5 font-sans text-xl text-gray-700 dark:text-gray-400'>
                   I typically reply within 2 days. If it’s anything urgent, send
                   me a quick message on my socials!
                 </h6>
@@ -123,12 +123,12 @@ export default function ContactPage() {
                   <div className='grid grid-cols-1 md:grid-cols-2 gap-x-6'>
                     <div className='my-2.5 md:my-3.5'>
                       <label className='block' htmlFor='name'>
-                        <span className='text-base font-medium text-gray-700'>
+                        <span className='text-base font-medium text-gray-700 dark:text-gray-300'>
                           Full name
                         </span>
                         <input
                           type='text'
-                          className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
+                          className='block w-full mt-1 text-gray-900 placeholder-gray-400 bg-gray-100 border-transparent rounded-md dark:text-gray-100 dark:bg-gray-800 focus:border-gray-500 dark:focus:border-gray-500 dark:focus:bg-black focus:bg-white focus:ring-0'
                           placeholder='Obi-Wan Kenobi'
                           id='name'
                           name='name'
@@ -138,12 +138,12 @@ export default function ContactPage() {
                     </div>
                     <div className='my-2.5 md:my-3.5'>
                       <label className='block' htmlFor='email'>
-                        <span className='text-base font-medium text-gray-700'>
+                        <span className='text-base font-medium text-gray-700 dark:text-gray-300'>
                           Email address
                         </span>
                         <input
                           type='email'
-                          className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
+                          className='block w-full mt-1 text-gray-900 placeholder-gray-400 bg-gray-100 border-transparent rounded-md dark:text-gray-100 dark:bg-gray-800 focus:border-gray-500 dark:focus:border-gray-500 dark:focus:bg-black focus:bg-white focus:ring-0'
                           placeholder='obi@therepublic.com'
                           id='email'
                           name='email'
@@ -155,12 +155,12 @@ export default function ContactPage() {
                   <div className='grid grid-cols-1'>
                     <div className='my-2.5 md:my-3.5'>
                       <label className='block' htmlFor='subject'>
-                        <span className='text-base font-medium text-gray-700'>
+                        <span className='text-base font-medium text-gray-700 dark:text-gray-300'>
                           Subject
                         </span>
                         <input
                           type='text'
-                          className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
+                          className='block w-full mt-1 text-gray-900 placeholder-gray-400 bg-gray-100 border-transparent rounded-md dark:text-gray-100 dark:bg-gray-800 focus:border-gray-500 dark:focus:border-gray-500 dark:focus:bg-black focus:bg-white focus:ring-0'
                           placeholder='The Death Star Initiative'
                           id='subject'
                           name='subject'
@@ -173,15 +173,15 @@ export default function ContactPage() {
                     <div className='my-2.5 md:my-3.5'>
                       <label className='block' htmlFor='message'>
                         <div className='flex flex-row items-center justify-between'>
-                          <span className='text-base font-medium text-gray-700'>
+                          <span className='text-base font-medium text-gray-700 dark:text-gray-300'>
                             Message
                           </span>
-                          <span className='text-sm font-normal text-gray-500'>
+                          <span className='text-sm font-light text-gray-500 dark:text-gray-400'>
                             Max. 500 characters
                           </span>
                         </div>
                         <textarea
-                          className='block w-full mt-1 bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
+                          className='block w-full mt-1 text-gray-900 placeholder-gray-400 bg-gray-100 border-transparent rounded-md dark:focus:bg-black dark:focus:border-gray-500 dark:text-gray-100 focus:border-gray-500 focus:bg-white focus:ring-0 dark:bg-gray-800'
                           rows='3'
                           placeholder='Dear General Organa...'
                           id='message'
@@ -192,7 +192,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className='flex justify-end mt-12'>
-                    <button className='px-6 py-3 transition duration-500 ease-in-out bg-white border rounded-md text-primary-500 hover:text-white hover:bg-primary-500 border-primary-500'>
+                    <button className='px-6 py-3 transition duration-500 ease-in-out bg-white border rounded-md dark:bg-black dark:text-white dark:border-gray-700 dark:hover:bg-primary-400 text-primary-500 hover:text-white hover:bg-primary-500 border-primary-500'>
                       Submit
                     </button>
                   </div>

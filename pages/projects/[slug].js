@@ -34,19 +34,22 @@ export default function SingleProjectPage() {
       </Head>
 
       <Layout>
-        <section className='my-20 md:my-36'>
+        <section className='py-20 md:py-36'>
           <div className='container'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-x-7.5'>
               <div className='font-sans'>
-                <h2 className='text-3xl font-medium text-gray-800 md:text-4xl lg:text-5xl'>
+                <h2 className='text-3xl font-medium text-gray-800 dark:text-gray-200 md:text-4xl lg:text-5xl'>
                   {project.title}
                 </h2>
-                <h4 className='mt-5 text-lg font-normal text-gray-600 md:text-xl lg:text-2xl'>
+                <h4 className='mt-5 text-lg font-normal text-gray-600 dark:text-gray-400 md:text-xl lg:text-2xl'>
                   {project.summary}
                 </h4>
                 <div className='inline-flex flex-row items-center justify-start border-b border-accent-400 pb-4 mt-10 mb-7.5'>
-                  <BiLink size={20} />
-                  <h6 className='ml-2.5 font-medium text-xl uppercase tracking-widest'>
+                  <BiLink
+                    size={20}
+                    className='text-gray-700 dark:text-gray-300'
+                  />
+                  <h6 className='ml-2.5 font-medium text-gray-700 dark:text-gray-300 text-xl uppercase tracking-widest'>
                     Links
                   </h6>
                 </div>
@@ -56,10 +59,10 @@ export default function SingleProjectPage() {
                       key={item._key}
                       href={item.link}
                       target='_blank'
-                      className='inline-flex flex-row items-center mb-5'
+                      className='inline-flex flex-row items-center mb-5 text-gray-300 dark:text-gray-600'
                     >
                       <BiCaretRight size={16} />
-                      <li className='list-item list-none ml-1.5 text-gray-600 hover:text-primary-500 transition duration-500 ease-in-out transform hover:translate-x-1'>
+                      <li className='list-item list-none ml-1.5 text-gray-600 dark:text-gray-300 dark:hover:text-primary-400 hover:text-primary-500 transition duration-500 ease-in-out transform hover:translate-x-1'>
                         {item.title}
                       </li>
                     </a>
@@ -81,7 +84,7 @@ export default function SingleProjectPage() {
         </section>
 
         <section className='mt-20 md:mt-28 lg:mt-36'>
-          <div className='bg-gray-50'>
+          <div className='bg-gray-50 dark:bg-gray-900'>
             <div className='container'>
               <div className='max-w-3xl mx-auto'>
                 <div className='py-20 md:py-32 lg:py-40'>
@@ -96,14 +99,14 @@ export default function SingleProjectPage() {
         </section>
 
         <section>
-          <div className='bg-gray-900 px-5 py-8 md:px-7.5 md:py-12 lg:px-12 lg:py-24'>
+          <div className='bg-gray-900 dark:bg-primary-900 px-5 py-8 md:px-7.5 md:py-12 lg:px-12 lg:py-24'>
             <div className='container'>
               <ul className='grid grid-cols-2 gap-5 lg:grid-cols-4'>
                 <li>
-                  <p className='text-sm md:text-base text-gray-300 font-light mb-2.5'>
+                  <p className='text-sm md:text-base text-gray-300 dark:text-gray-400 font-light mb-2.5'>
                     Technologies
                   </p>
-                  <h6 className='text-base font-normal text-white lg:text-lg'>
+                  <h6 className='text-base font-normal text-white dark:text-white lg:text-lg'>
                     {project.technologies && project.technologies.join(', ')}
                   </h6>
                 </li>
@@ -111,10 +114,10 @@ export default function SingleProjectPage() {
                   <p className='text-sm md:text-base text-gray-300 font-light mb-2.5'>
                     Tags
                   </p>
-                  <ul className='flex flex-row flex-wrap list-none'>
+                  <ul className='flex flex-col flex-wrap list-none'>
                     {project.tags.map((item, index) => (
-                      <li key={index} className='mb-2 mr-2'>
-                        <p className='text-sm lg:text-base text-white font-normal inline-block p-1.5 rounded-sm border border-gray-700'>
+                      <li key={index} className='mb-2'>
+                        <p className='inline-block text-sm font-normal text-white lg:text-base'>
                           {item}
                         </p>
                       </li>
