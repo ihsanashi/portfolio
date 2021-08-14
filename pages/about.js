@@ -202,7 +202,7 @@ export default function AboutPage() {
                 {skills.map((item) => (
                   <li
                     key={item._key}
-                    className='mr-2.5 mb-2 px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-md text-sm md:text-base'
+                    className='mr-2.5 mb-2 px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-md text-sm md:text-base'
                   >
                     {item.title}
                   </li>

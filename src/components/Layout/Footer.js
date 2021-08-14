@@ -3,16 +3,31 @@ import { useEffect, useState } from 'react';
 import { Sitemap } from '../../Sitemap';
 import { Socials } from '../../Socials';
 import { useTheme } from 'next-themes';
-import { BiSun, BiMoon } from 'react-icons/bi';
+import { BiDesktop, BiSun, BiMoon } from 'react-icons/bi';
 
 const themes = [
-  { value: 'light', label: 'Light', icon: BiSun },
-  { value: 'dark', label: 'Dark', icon: BiMoon },
+  {
+    value: 'system',
+    label: 'System',
+    icon: <BiDesktop size={20} className='text-gray-300' />,
+  },
+  {
+    value: 'dark',
+    label: 'Dark',
+    icon: <BiMoon size={20} className='text-blue-600' />,
+  },
+  {
+    value: 'light',
+    label: 'Light',
+    icon: <BiSun size={20} className='text-yellow-500' />,
+  },
 ];
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  const currentTheme = themes.find((t) => t.value === theme);
 
   useEffect(() => setMounted(true), []);
 
@@ -28,7 +43,7 @@ export default function Footer() {
               src='/ai-logo.svg'
               alt='Ahmad Ihsan logo'
             />
-            <div className='mt-3.5 font-light text-gray-400 dark:text-gray-300'>
+            <div className='mt-3.5 font-light text-gray-400'>
               <p className='text-sm'>Copyright © Ahmad Ihsan.</p>
               <p className='text-sm my-1.5'>All rights reserved.</p>
               <p className='text-xs'>Made with 💙 and ☕</p>
@@ -42,7 +57,7 @@ export default function Footer() {
               {Sitemap.map((item) => (
                 <li key={item.id} className='mb-2'>
                   <Link href={item.link}>
-                    <a className='inline-block text-base font-normal text-gray-400 transition duration-500 ease-in-out transform dark:text-gray-300 dark:hover:text-primary-400 hover:text-primary-500'>
+                    <a className='inline-block text-base font-normal text-gray-400 transition duration-500 ease-in-out transform dark:text-gray-500 dark:hover:text-primary-400 hover:text-primary-500'>
                       {item.title}
                     </a>
                   </Link>
@@ -71,20 +86,25 @@ export default function Footer() {
             </div>
             <div className='pt-5'>
               <label aria-label='theme-toggle'>
-                <select
-                  name='theme'
-                  id='theme-select'
-                  aria-label='Change colour theme'
-                  value={theme}
-                  onChange={(e) => setTheme(e.currentTarget.value)}
-                  className='inline mt-1 text-gray-800 bg-gray-100 border-gray-200 rounded-md appearance-none dark:border-gray-700 dark:text-gray-100 dark:bg-gray-800 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50'
-                >
-                  {themes.map((t) => (
-                    <option key={t.value} value={t.value}>
-                      {t.label}
-                    </option>
-                  ))}
-                </select>
+                <div className='relative'>
+                  <div className='absolute inset-y-0 left-0 flex items-center justify-center px-3 pointer-events-none'>
+                    <span className='fill-current'>{currentTheme.icon}</span>
+                  </div>
+                  <select
+                    name='theme'
+                    id='theme-select'
+                    aria-label='Change colour theme'
+                    value={theme}
+                    onChange={(e) => setTheme(e.currentTarget.value)}
+                    className='pl-10 text-sm font-normal text-gray-600 bg-white border border-gray-200 rounded-md w-36 dark:text-gray-300 dark:border-gray-700 dark:bg-black focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50'
+                  >
+                    {themes.map((t) => (
+                      <option key={t.value} value={t.value}>
+                        {t.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </label>
             </div>
           </div>
