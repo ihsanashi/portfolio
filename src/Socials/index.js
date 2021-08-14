@@ -15,7 +15,7 @@ export const Socials = [
     id: 'linkedin',
     title: 'LinkedIn',
     icon: <RiLinkedinBoxFill size={iconSize} className={iconStyles} />,
-    url: 'https://www.linkedin.com',
+    url: 'https://www.linkedin.com/in/ihsanashi/',
   },
   {
     id: 'email',
