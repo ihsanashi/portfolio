@@ -73,9 +73,9 @@ export default function ContactPage() {
                   </h6>
                 </div>
                 <div className='mt-12'>
-                  <div className='flex flex-row items-stretch'>
+                  <div className='flex flex-row items-stretch justify-center'>
                     <input
-                      className='inline w-full px-5 py-3 overflow-hidden text-gray-900 bg-white border border-gray-200 dark:text-gray-100 dark:bg-gray-900 dark:border-gray-800 rounded-l-md'
+                      className='inline px-5 py-3 overflow-hidden text-gray-900 bg-white border border-gray-200 dark:text-gray-100 dark:bg-gray-900 dark:border-gray-800 rounded-l-md focus:ring-0 focus:border-gray-200 dark:focus:border-gray-800'
                       type='text'
                       value='hello@ahmadihsan.com'
                       ref={emailRef}
