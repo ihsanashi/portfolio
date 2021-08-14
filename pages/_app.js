@@ -5,6 +5,8 @@ import Head from 'next/head';
 import { ApolloProvider } from '@apollo/client';
 import { useApollo } from '../lib/apolloClient';
 
+import { ThemeProvider } from 'next-themes';
+
 export default function App({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
 
@@ -35,7 +37,9 @@ export default function App({ Component, pageProps }) {
         <meta name='theme-color' content='#0C3F7A' />
       </Head>
       <ApolloProvider client={apolloClient}>
-        <Component {...pageProps} />
+        <ThemeProvider attribute='class'>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </ApolloProvider>
     </>
   );
