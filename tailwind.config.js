@@ -19,8 +19,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Mukta', 'sans-serif'],
-      serif: ['Spectral', 'serif'],
+      sans: ['Poppins', 'sans-serif'],
+      serif: ['Newsreader', 'serif'],
     },
     flex: {
       '0-0-auto': '0 0 auto',

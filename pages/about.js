@@ -67,7 +67,7 @@ export default function AboutPage() {
                     serializers={{
                       h5: (props) => (
                         <h5
-                          className='font-sans text-xl leading-10 text-gray-800 dark:text-gray-200 md:text-2xl'
+                          className='font-sans text-xl leading-loose text-gray-800 dark:text-gray-200 md:text-2xl md:leading-10'
                           {...props}
                         />
                       ),
