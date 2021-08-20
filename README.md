@@ -1,4 +1,5 @@
 # Table of Contents
+
 - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Technologies](#technologies)
@@ -12,13 +13,14 @@ This is a repo for my latest development portfolio, built with React and Next.js
 
 ## Technologies
 
-- React and Next.js for UI, utilising getStaticProps (static generation, fetch data at build time) and getServerSideProps (server-side rendering, fetch data at request time). *next-sanity-image* was used for image optimisation.
-- sanity/client library for fetching content from the Sanity CMS, and *react-portable-text* library for rendering rich text
+- React and Next.js for UI, utilising getStaticProps (static generation, fetch data at build time) and getServerSideProps (server-side rendering, fetch data at request time). _next-sanity-image_ was used for image optimisation.
+- sanity/client library for fetching content from the Sanity CMS, and _react-portable-text_ library for rendering rich text
 - Apollo-client and GraphQL was used to query the data from Sanity
 - Tailwind CSS was used for styling
-- *moment* library for formatting dates and times
+- _moment_ library for formatting dates and times
 - Material UI for rendering the Timeline component for showcasing my work experience
-- Utilise Next.js API route and *@sendgrid/mail* library to send an email to myself when a viewer submits a form in my contact page
+- Utilise Next.js API route and _@sendgrid/mail_ library to send an email to myself when a viewer submits a form in my contact page
+- Dark mode switcher configured with _next-themes_ and Tailwind CSS
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
