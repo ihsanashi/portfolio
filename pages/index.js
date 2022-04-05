@@ -28,11 +28,7 @@ export default function Home() {
           <section className='py-12 md:py-24'>
             <div className='max-w-xl mx-auto font-sans'>
               <h5 className='mt-3 mb-5 text-2xl font-medium text-center text-gray-900 dark:text-gray-200'>
-                <span className='font-serif text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300 dark:from-primary-300 dark:via-primary-500 dark:to-primary-700'>
-                  Ahmad Ihsan
-                </span>{' '}
-                is a Frontend Developer and UX/UI Designer from Kuala Lumpur,
-                Malaysia.
+                Ahmad Ihsan is a Software Developer from Kuala Lumpur, Malaysia.
               </h5>
             </div>
           </section>
