@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 import Custom404 from '../404';
 import Loading from '../../src/components/Loading';
@@ -39,29 +39,25 @@ export default function ProjectsPage() {
                 >
                   <div className='relative'>
                     <Link href={`/projects/${project.slug.current}`}>
-                      <a>
-                        <Image
-                          className='rounded-t-md'
-                          src={project.image.asset.url}
-                          alt={`Photo of the project ${project.title}`}
-                          layout='responsive'
-                          objectFit='cover'
-                          width={330}
-                          height={200}
-                        />
-                      </a>
+                      <Image
+                        className='rounded-t-md'
+                        src={project.image.asset.url}
+                        alt={`Photo of the project ${project.title}`}
+                        layout='responsive'
+                        objectFit='cover'
+                        width={330}
+                        height={200}
+                      />
                     </Link>
                   </div>
                   <div className='flex flex-col p-5'>
                     <Link href={`/projects/${project.slug.current}`}>
-                      <a>
-                        <h4 className='text-xl font-medium text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500 dark:text-gray-100 dark:group-hover:text-primary-400'>
-                          {project.title}
-                        </h4>
-                        <p className='text-sm leading-normal text-gray-600 dark:text-gray-400 md:text-base mt-2.5 mb-7.5'>
-                          {project.summary}
-                        </p>
-                      </a>
+                      <h4 className='text-xl font-medium text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500 dark:text-gray-100 dark:group-hover:text-primary-400'>
+                        {project.title}
+                      </h4>
+                      <p className='text-sm leading-normal text-gray-600 dark:text-gray-400 md:text-base mt-2.5 mb-7.5'>
+                        {project.summary}
+                      </p>
                     </Link>
                     {project.links.length <= 2 && (
                       <ul className='flex flex-row'>
@@ -83,11 +79,12 @@ export default function ProjectsPage() {
                       </ul>
                     )}
                     <div className='flex flex-row items-center justify-start mt-10 group'>
-                      <Link href={`/projects/${project.slug.current}`}>
-                        <a className='inline-flex flex-row items-center text-sm font-medium tracking-wider transition duration-500 ease-in-out transform text-primary-600 dark:text-primary-400 dark:hover:text-primary-200 hover:text-primary-300 hover:translate-x-1'>
-                          Explore
-                          <BiRightArrowAlt className='ml-1.5' size={18} />
-                        </a>
+                      <Link
+                        className='inline-flex flex-row items-center text-sm font-medium tracking-wider transition duration-500 ease-in-out transform text-primary-600 dark:text-primary-400 dark:hover:text-primary-200 hover:text-primary-300 hover:translate-x-1'
+                        href={`/projects/${project.slug.current}`}
+                      >
+                        Explore
+                        <BiRightArrowAlt className='ml-1.5' size={18} />
                       </Link>
                     </div>
                   </div>

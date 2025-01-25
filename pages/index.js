@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 import Custom404 from './404';
 import Loading from '../src/components/Loading';
@@ -45,29 +45,25 @@ export default function Home() {
                 >
                   <div className='relative'>
                     <Link href={`/projects/${project.slug.current}`}>
-                      <a>
-                        <Image
-                          className='rounded-t-md'
-                          src={project.image.asset.url}
-                          alt={`Photo of the project ${project.title}`}
-                          layout='responsive'
-                          objectFit='cover'
-                          width={330}
-                          height={200}
-                        />
-                      </a>
+                      <Image
+                        className='rounded-t-md'
+                        src={project.image.asset.url}
+                        alt={`Photo of the project ${project.title}`}
+                        layout='responsive'
+                        objectFit='cover'
+                        width={330}
+                        height={200}
+                      />
                     </Link>
                   </div>
                   <div className='flex flex-col p-5'>
                     <Link href={`/projects/${project.slug.current}`}>
-                      <a>
-                        <h4 className='text-xl font-medium text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500 dark:text-gray-100 dark:group-hover:text-primary-400'>
-                          {project.title}
-                        </h4>
-                        <p className='text-sm leading-normal text-gray-600 dark:text-gray-400 md:text-base mt-2.5 mb-7.5'>
-                          {project.summary}
-                        </p>
-                      </a>
+                      <h4 className='text-xl font-medium text-gray-900 transition duration-300 ease-in-out md:text-2xl group-hover:text-primary-500 dark:text-gray-100 dark:group-hover:text-primary-400'>
+                        {project.title}
+                      </h4>
+                      <p className='text-sm leading-normal text-gray-600 dark:text-gray-400 md:text-base mt-2.5 mb-7.5'>
+                        {project.summary}
+                      </p>
                     </Link>
                     {project.links.length <= 2 && (
                       <ul className='flex flex-row'>
@@ -89,11 +85,12 @@ export default function Home() {
                       </ul>
                     )}
                     <div className='flex flex-row items-center justify-start mt-10 group'>
-                      <Link href={`/projects/${project.slug.current}`}>
-                        <a className='inline-flex flex-row items-center text-sm font-medium tracking-wider transition duration-500 ease-in-out transform text-primary-600 dark:text-primary-400 dark:hover:text-primary-200 hover:text-primary-300 hover:translate-x-1'>
-                          Explore
-                          <BiRightArrowAlt className='ml-1.5' size={18} />
-                        </a>
+                      <Link
+                        className='inline-flex flex-row items-center text-sm font-medium tracking-wider transition duration-500 ease-in-out transform text-primary-600 dark:text-primary-400 dark:hover:text-primary-200 hover:text-primary-300 hover:translate-x-1'
+                        href={`/projects/${project.slug.current}`}
+                      >
+                        Explore
+                        <BiRightArrowAlt className='ml-1.5' size={18} />
                       </Link>
                     </div>
                   </div>
@@ -122,10 +119,11 @@ export default function Home() {
                     ),
                   }}
                 />
-                <Link href='/about'>
-                  <a className='inline-block mt-7.5 font-medium transition duration-500 ease-in-out transform text-primary-600 dark:text-primary-300 dark:hover:text-primary-200 hover:text-primary-300 hover:translate-x-1'>
-                    Read more
-                  </a>
+                <Link
+                  className='inline-block mt-7.5 font-medium transition duration-500 ease-in-out transform text-primary-600 dark:text-primary-300 dark:hover:text-primary-200 hover:text-primary-300 hover:translate-x-1'
+                  href='/about'
+                >
+                  Read more
                 </Link>
               </div>
               <div className='relative order-1 px-10 pb-2.5 -top-8 md:p-5 lg:p-4 md:top-32 md:left-8 lg:left-16 xl:left-24 md:order-2'>
@@ -149,10 +147,11 @@ export default function Home() {
                 <h6 className='mt-2.5 mb-7.5 text-lg text-gray-800 dark:text-gray-300'>
                   I'm actively looking for a remote Frontend Developer role.
                 </h6>
-                <Link href='/contact'>
-                  <a className='inline-block px-5 py-3 font-medium rounded-md bg-primary-50 dark:bg-primary-700 hover:bg-primary-500 text-primary-500 dark:text-primary-300 dark:hover:bg-primary-600 dark:hover:text-white hover:text-white transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105'>
-                    Let's connect
-                  </a>
+                <Link
+                  className='inline-block px-5 py-3 font-medium rounded-md bg-primary-50 dark:bg-primary-700 hover:bg-primary-500 text-primary-500 dark:text-primary-300 dark:hover:bg-primary-600 dark:hover:text-white hover:text-white transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105'
+                  href='/contact'
+                >
+                  Let's connect
                 </Link>
               </div>
             </div>

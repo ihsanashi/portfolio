@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Custom404 from '../404';
 import Loading from '../../src/components/Loading';
 import Layout from '../../src/components/Layout';

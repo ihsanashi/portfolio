@@ -56,10 +56,11 @@ export default function Footer() {
             <ul className='mt-2 mb-5 list-none'>
               {Sitemap.map((item) => (
                 <li key={item.id} className='mb-2'>
-                  <Link href={item.link}>
-                    <a className='inline-block text-base font-normal text-gray-400 transition duration-500 ease-in-out transform dark:text-gray-500 dark:hover:text-primary-400 hover:text-primary-500'>
-                      {item.title}
-                    </a>
+                  <Link
+                    className='inline-block text-base font-normal text-gray-400 transition duration-500 ease-in-out transform dark:text-gray-500 dark:hover:text-primary-400 hover:text-primary-500'
+                    href={item.link}
+                  >
+                    {item.title}
                   </Link>
                 </li>
               ))}

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 import Custom404 from '../404';
 import Loading from '../../src/components/Loading';
@@ -38,16 +38,14 @@ export default function BlogPage() {
                   <article className='flex flex-col group'>
                     <div className='relative'>
                       <Link href={`/blog/${post.slug.current}`}>
-                        <a>
-                          <Image
-                            className='rounded-md'
-                            src={post.cover.asset.url}
-                            alt={post.cover.asset.altText}
-                            layout='responsive'
-                            width={330}
-                            height={200}
-                          />
-                        </a>
+                        <Image
+                          className='rounded-md'
+                          src={post.cover.asset.url}
+                          alt={post.cover.asset.altText}
+                          layout='responsive'
+                          width={330}
+                          height={200}
+                        />
                       </Link>
                     </div>
                     <div className='flex flex-row flex-wrap items-center my-2.5 font-sans group text-sm'>
@@ -65,20 +63,18 @@ export default function BlogPage() {
                     </div>
                     <div>
                       <Link href={`/blog/${post.slug.current}`}>
-                        <a>
-                          <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl dark:text-gray-100 dark:hover:text-primary-400 group-hover:text-primary-500'>
-                            {post.title}
-                          </h4>
-                          <div className='flex flex-row flex-wrap items-center group mt-2.5'>
-                            <p className='text-sm font-normal leading-normal text-gray-600 dark:text-gray-400 md:text-base'>
-                              {post.description}
-                            </p>
-                            <BiRightArrowAlt
-                              className='text-gray-400 border border-transparent rounded-full dark:group-hover:border-primary-400 group-hover:border-primary-500 dark:group-hover:text-primary-400 group-hover:text-primary-500 ml-1.5 transition duration-300 ease-in-out'
-                              size={20}
-                            />
-                          </div>
-                        </a>
+                        <h4 className='text-xl font-semibold text-gray-900 transition duration-300 ease-in-out md:text-2xl dark:text-gray-100 dark:hover:text-primary-400 group-hover:text-primary-500'>
+                          {post.title}
+                        </h4>
+                        <div className='flex flex-row flex-wrap items-center group mt-2.5'>
+                          <p className='text-sm font-normal leading-normal text-gray-600 dark:text-gray-400 md:text-base'>
+                            {post.description}
+                          </p>
+                          <BiRightArrowAlt
+                            className='text-gray-400 border border-transparent rounded-full dark:group-hover:border-primary-400 group-hover:border-primary-500 dark:group-hover:text-primary-400 group-hover:text-primary-500 ml-1.5 transition duration-300 ease-in-out'
+                            size={20}
+                          />
+                        </div>
                       </Link>
                     </div>
                   </article>

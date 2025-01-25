@@ -24,10 +24,11 @@ export default function Custom404() {
             </div>
             <h6 className='mt-8 font-sans text-lg font-light text-gray-700 dark:text-gray-300'>
               Go back to{' '}
-              <Link href='/'>
-                <a className='font-medium text-gray-400 no-underline transition duration-300 ease-in-out delay-100 dark:text-gray-600 dark:hover:text-primary-400 hover:text-primary-500 hover:underline'>
-                  home
-                </a>
+              <Link
+                className='font-medium text-gray-400 no-underline transition duration-300 ease-in-out delay-100 dark:text-gray-600 dark:hover:text-primary-400 hover:text-primary-500 hover:underline'
+                href='/'
+              >
+                home
               </Link>
             </h6>
           </div>

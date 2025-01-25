@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Sitemap } from '../../Sitemap';
@@ -33,13 +33,11 @@ export default function Navbar() {
           <section className='flex items-center justify-between flex-none'>
             <div className='z-20 flex-none'>
               <Link href='/'>
-                <a>
-                  <img
-                    className='h-7.5 w-7.5 md:h-12 md:w-12'
-                    src='/ai-logo.svg'
-                    alt='Ahmad Ihsan logo'
-                  />
-                </a>
+                <img
+                  className='h-7.5 w-7.5 md:h-12 md:w-12'
+                  src='/ai-logo.svg'
+                  alt='Ahmad Ihsan logo'
+                />
               </Link>
             </div>
             <div className='flex-grow'></div>
@@ -58,16 +56,15 @@ export default function Navbar() {
                     key={filtered.id}
                     className='w-full my-8 md:w-auto md:my-0'
                   >
-                    <Link href={filtered.link}>
-                      <a
-                        className={`py-1 font-normal border-b border-transparent hover:text-primary-500 hover:border-primary-500 transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base ${
-                          router.pathname === filtered.link
-                            ? 'text-primary-500 dark:text-primary-400'
-                            : 'text-gray-500 md:dark:text-gray-400'
-                        }`}
-                      >
-                        {filtered.title}
-                      </a>
+                    <Link
+                      className={`py-1 font-normal border-b border-transparent hover:text-primary-500 hover:border-primary-500 transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base ${
+                        router.pathname === filtered.link
+                          ? 'text-primary-500 dark:text-primary-400'
+                          : 'text-gray-500 md:dark:text-gray-400'
+                      }`}
+                      href={filtered.link}
+                    >
+                      {filtered.title}
                     </Link>
                   </li>
                 ))}
@@ -78,16 +75,15 @@ export default function Navbar() {
                     key={filtered.id}
                     className='w-full my-8 md:w-auto md:my-0'
                   >
-                    <Link href={filtered.link}>
-                      <a
-                        className={`px-5 py-2 border rounded-md transition duration-500 ease-in-out text-center transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base ${
-                          router.pathname === filtered.link
-                            ? 'bg-primary-500 text-primary-50 md:bg-transparent border-gray-300 dark:border-gray-700 md:dark:text-primary-400 md:text-primary-600'
-                            : 'bg-white hover:text-white dark:bg-black hover:bg-primary-500 dark:hover:bg-primary-400 text-primary-500 border-primary-500'
-                        }`}
-                      >
-                        {filtered.title}
-                      </a>
+                    <Link
+                      className={`px-5 py-2 border rounded-md transition duration-500 ease-in-out text-center transform hover:-translate-y-0.5 hover:scale-105 block md:inline-block text-2xl md:text-base ${
+                        router.pathname === filtered.link
+                          ? 'bg-primary-500 text-primary-50 md:bg-transparent border-gray-300 dark:border-gray-700 md:dark:text-primary-400 md:text-primary-600'
+                          : 'bg-white hover:text-white dark:bg-black hover:bg-primary-500 dark:hover:bg-primary-400 text-primary-500 border-primary-500'
+                      }`}
+                      href={filtered.link}
+                    >
+                      {filtered.title}
                     </Link>
                   </li>
                 ))}
