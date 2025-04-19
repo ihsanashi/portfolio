@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@apollo/client':
         specifier: ^3.12.7
-        version: 3.12.7(@types/react@17.0.17)(graphql@16.10.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 3.13.8(@types/react@19.1.2)(graphql@16.10.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@material-ui/core':
         specifier: ^4.12.4
-        version: 4.12.4(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 4.12.4(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@material-ui/lab':
         specifier: ^4.0.0-alpha.60
-        version: 4.0.0-alpha.60(@material-ui/core@4.12.4(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 4.0.0-alpha.60(@material-ui/core@4.12.4(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@sanity/client':
         specifier: ^6.27.1
         version: 6.27.1
@@ -34,10 +34,10 @@ importers:
         version: 2.30.1
       next:
         specifier: ^15.3.1
-        version: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4)
       next-sanity-image:
         specifier: ^6.1.1
-        version: 6.1.1(@sanity/client@6.27.1)(next@15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
+        version: 6.1.1(@sanity/client@6.27.1)(next@15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4))(react@19.1.0)
       next-themes:
         specifier: 0.4.4
         version: 0.4.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -54,6 +54,9 @@ importers:
         specifier: ^0.6.0
         version: 0.6.0(react@19.1.0)
     devDependencies:
+      '@types/react':
+        specifier: ^19.1.2
+        version: 19.1.2
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.5.1)
@@ -73,11 +76,11 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
-  '@apollo/client@3.12.7':
-    resolution: {integrity: sha512-c0LSzS3tmJ06WSyNxsTHlfc4OLLYDnWtN+zkRjMQ80KCcp89sEpNgZP5ZCXdt2pUwUqOAvZFKJW7L8tolDzkrw==}
+  '@apollo/client@3.13.8':
+    resolution: {integrity: sha512-YM9lQpm0VfVco4DSyKooHS/fDTiKQcCHfxr7i3iL6a0kP/jNO5+4NFK6vtRDxaYisd5BrwOZHLJpPBnvRVpKPg==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
-      graphql-ws: ^5.5.5
+      graphql-ws: ^5.5.5 || ^6.0.3
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc
       subscriptions-transport-ws: ^0.9.0 || ^0.11.0
@@ -531,17 +534,11 @@ packages:
   '@types/progress-stream@2.0.5':
     resolution: {integrity: sha512-5YNriuEZkHlFHHepLIaxzq3atGeav1qCTGzB74HKWpo66qjfostF+rHc785YYYHeBytve8ZG3ejg42jEIfXNiQ==}
 
-  '@types/prop-types@15.7.4':
-    resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
-
   '@types/react-transition-group@4.4.2':
     resolution: {integrity: sha512-KibDWL6nshuOJ0fu8ll7QnV/LVTo3PzQ9aCPnRUYPfX7eZohHwLIdNHj7pftanREzHNP4/nJa8oeM73uSiavMQ==}
 
-  '@types/react@17.0.17':
-    resolution: {integrity: sha512-nrfi7I13cAmrd0wje8czYpf5SFbryczCtPzFc6ijqvdjKcyA3tCvGxwchOUlxb2ucBPuJ9Y3oUqKrRqZvrz0lw==}
-
-  '@types/scheduler@0.16.2':
-    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+  '@types/react@19.1.2':
+    resolution: {integrity: sha512-oxLPMytKchWGbnQM9O7D67uPa9paTNxO7jVoNMXgkkErULBPhPARCfkKL9ytcIJJRGjbsVwW4ugJzyFFvm/Tiw==}
 
   '@typescript-eslint/eslint-plugin@8.30.1':
     resolution: {integrity: sha512-v+VWphxMjn+1t48/jO4t950D6KR8JaJuNXzi33Ve6P8sEmPr5k6CEXjdGwT6+LodVnEa91EQCtwjWNUCPweo+Q==}
@@ -1357,6 +1354,9 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
+  immutable@4.3.7:
+    resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
+
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
     engines: {node: '>=6'}
@@ -1911,9 +1911,6 @@ packages:
   readable-stream@2.3.7:
     resolution: {integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==}
 
-  readable-stream@2.3.8:
-    resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==}
-
   readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
@@ -1956,10 +1953,6 @@ packages:
     resolution: {integrity: sha512-U7WjGVG9sH8tvjW5SmGbQuui75FiyjAX72HX15DwBBwF9dNiQZRQAg9nnPhYy+TUnE0+VcrttuvNI8oSxZcocA==}
     hasBin: true
 
-  response-iterator@0.2.19:
-    resolution: {integrity: sha512-9SNSciJRoDouZg4ClSfjGVw+nLNs0VD/XNxEUdQIMfNHrgIf2aBYwQicbroY4eg6KQiu2WMclH3kOBnxU3Thzw==}
-    engines: {node: '>=0.8'}
-
   reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
@@ -1987,6 +1980,11 @@ packages:
   safe-regex-test@1.1.0:
     resolution: {integrity: sha512-x/+Cz4YrimQxQccJf5mKEbIa1NzeCRNI5Ecl/ekmlYaampdNLPalVyIcCZNNH3MvmqBugV5TMYZXv0ljslUlaw==}
     engines: {node: '>= 0.4'}
+
+  sass@1.77.4:
+    resolution: {integrity: sha512-vcF3Ckow6g939GMA4PeU7b2K/9FALXk2KF9J87txdHzXbUF9XRQRwSxcAs/fGaTnJeBFd7UoV22j3lzMLdM0Pw==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
 
   scheduler@0.26.0:
     resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
@@ -2292,7 +2290,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@apollo/client@3.12.7(@types/react@17.0.17)(graphql@16.10.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@apollo/client@3.13.8(@types/react@19.1.2)(graphql@16.10.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
       '@wry/caches': 1.0.1
@@ -2302,9 +2300,8 @@ snapshots:
       graphql-tag: 2.12.6(graphql@16.10.0)
       hoist-non-react-statics: 3.3.2
       optimism: 0.18.1
-      prop-types: 15.7.2
-      rehackt: 0.1.0(@types/react@17.0.17)(react@19.1.0)
-      response-iterator: 0.2.19
+      prop-types: 15.8.1
+      rehackt: 0.1.0(@types/react@19.1.2)(react@19.1.0)
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
       tslib: 2.8.1
@@ -2502,12 +2499,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@material-ui/core@4.12.4(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@material-ui/core@4.12.4(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@babel/runtime': 7.15.3
-      '@material-ui/styles': 4.11.5(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@material-ui/system': 4.12.2(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@material-ui/types': 5.1.0(@types/react@17.0.17)
+      '@material-ui/styles': 4.11.5(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@material-ui/system': 4.12.2(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@material-ui/types': 5.1.0(@types/react@19.1.2)
       '@material-ui/utils': 4.11.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@types/react-transition-group': 4.4.2
       clsx: 1.1.1
@@ -2519,12 +2516,12 @@ snapshots:
       react-is: 16.13.1
       react-transition-group: 4.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     optionalDependencies:
-      '@types/react': 17.0.17
+      '@types/react': 19.1.2
 
-  '@material-ui/lab@4.0.0-alpha.60(@material-ui/core@4.12.4(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@material-ui/lab@4.0.0-alpha.60(@material-ui/core@4.12.4(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@babel/runtime': 7.15.3
-      '@material-ui/core': 4.12.4(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@material-ui/core': 4.12.4(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@material-ui/utils': 4.11.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       clsx: 1.1.1
       prop-types: 15.7.2
@@ -2532,13 +2529,13 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
       react-is: 16.13.1
     optionalDependencies:
-      '@types/react': 17.0.17
+      '@types/react': 19.1.2
 
-  '@material-ui/styles@4.11.5(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@material-ui/styles@4.11.5(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@babel/runtime': 7.15.3
       '@emotion/hash': 0.8.0
-      '@material-ui/types': 5.1.0(@types/react@17.0.17)
+      '@material-ui/types': 5.1.0(@types/react@19.1.2)
       '@material-ui/utils': 4.11.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       clsx: 1.1.1
       csstype: 2.6.17
@@ -2555,9 +2552,9 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
     optionalDependencies:
-      '@types/react': 17.0.17
+      '@types/react': 19.1.2
 
-  '@material-ui/system@4.12.2(@types/react@17.0.17)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@material-ui/system@4.12.2(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@babel/runtime': 7.15.3
       '@material-ui/utils': 4.11.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -2566,11 +2563,11 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
     optionalDependencies:
-      '@types/react': 17.0.17
+      '@types/react': 19.1.2
 
-  '@material-ui/types@5.1.0(@types/react@17.0.17)':
+  '@material-ui/types@5.1.0(@types/react@19.1.2)':
     optionalDependencies:
-      '@types/react': 17.0.17
+      '@types/react': 19.1.2
 
   '@material-ui/utils@4.11.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
@@ -2736,19 +2733,13 @@ snapshots:
     dependencies:
       '@types/node': 22.10.10
 
-  '@types/prop-types@15.7.4': {}
-
   '@types/react-transition-group@4.4.2':
     dependencies:
-      '@types/react': 17.0.17
+      '@types/react': 19.1.2
 
-  '@types/react@17.0.17':
+  '@types/react@19.1.2':
     dependencies:
-      '@types/prop-types': 15.7.4
-      '@types/scheduler': 0.16.2
       csstype: 3.0.8
-
-  '@types/scheduler@0.16.2': {}
 
   '@typescript-eslint/eslint-plugin@8.30.1(@typescript-eslint/parser@8.30.1(eslint@9.25.0(jiti@1.21.7))(typescript@5.8.3))(eslint@9.25.0(jiti@1.21.7))(typescript@5.8.3)':
     dependencies:
@@ -3740,6 +3731,9 @@ snapshots:
 
   ignore@5.3.2: {}
 
+  immutable@4.3.7:
+    optional: true
+
   import-fresh@3.3.1:
     dependencies:
       parent-module: 1.0.1
@@ -4047,11 +4041,11 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next-sanity-image@6.1.1(@sanity/client@6.27.1)(next@15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0):
+  next-sanity-image@6.1.1(@sanity/client@6.27.1)(next@15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4))(react@19.1.0):
     dependencies:
       '@sanity/client': 6.27.1
       '@sanity/image-url': 1.1.0
-      next: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      next: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4)
       react: 19.1.0
 
   next-themes@0.4.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
@@ -4059,7 +4053,7 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  next@15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  next@15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4):
     dependencies:
       '@next/env': 15.3.1
       '@swc/counter': 0.1.3
@@ -4079,6 +4073,7 @@ snapshots:
       '@next/swc-linux-x64-musl': 15.3.1
       '@next/swc-win32-arm64-msvc': 15.3.1
       '@next/swc-win32-x64-msvc': 15.3.1
+      sass: 1.77.4
       sharp: 0.34.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -4308,16 +4303,6 @@ snapshots:
       string_decoder: 1.1.1
       util-deprecate: 1.0.2
 
-  readable-stream@2.3.8:
-    dependencies:
-      core-util-is: 1.0.2
-      inherits: 2.0.4
-      isarray: 1.0.0
-      process-nextick-args: 2.0.1
-      safe-buffer: 5.1.2
-      string_decoder: 1.1.1
-      util-deprecate: 1.0.2
-
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.0
@@ -4344,9 +4329,9 @@ snapshots:
       gopd: 1.2.0
       set-function-name: 2.0.2
 
-  rehackt@0.1.0(@types/react@17.0.17)(react@19.1.0):
+  rehackt@0.1.0(@types/react@19.1.2)(react@19.1.0):
     optionalDependencies:
-      '@types/react': 17.0.17
+      '@types/react': 19.1.2
       react: 19.1.0
 
   resolve-from@4.0.0: {}
@@ -4364,10 +4349,6 @@ snapshots:
       is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
-
-  response-iterator@0.2.19:
-    dependencies:
-      readable-stream: 2.3.8
 
   reusify@1.0.4: {}
 
@@ -4401,6 +4382,13 @@ snapshots:
       call-bound: 1.0.4
       es-errors: 1.3.0
       is-regex: 1.2.1
+
+  sass@1.77.4:
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.7
+      source-map-js: 1.2.1
+    optional: true
 
   scheduler@0.26.0: {}
 
