@@ -141,7 +141,7 @@ export default function Home() {
           <section className='py-10 md:py-18'>
             <div className='max-w-xl p-8 mx-auto rounded-md lg:p-24'>
               <div className='text-center'>
-                <h3 className='font-serif text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-pink-500 to-red-500 dark:from-primary-300 dark:via-pink-400 dark:to-red-400'>
+                <h3 className='font-serif text-3xl font-medium text-transparent bg-clip-text bg-linear-to-r from-primary-400 via-pink-500 to-red-500 dark:from-primary-300 dark:via-pink-400 dark:to-red-400'>
                   Want to reach out?
                 </h3>
                 <h6 className='mt-2.5 mb-7.5 text-lg text-gray-800 dark:text-gray-300'>

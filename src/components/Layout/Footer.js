@@ -97,7 +97,7 @@ export default function Footer() {
                     aria-label='Change colour theme'
                     value={theme}
                     onChange={(e) => setTheme(e.currentTarget.value)}
-                    className='pl-10 text-sm font-normal text-gray-500 bg-white border border-gray-200 rounded-md w-36 dark:text-gray-300 dark:border-gray-700 dark:bg-black focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50'
+                    className='pl-10 text-sm font-normal text-gray-500 bg-white border border-gray-200 rounded-md w-36 dark:text-gray-300 dark:border-gray-700 dark:bg-black focus:border-primary-300 focus:ring-3 focus:ring-primary-200 focus:ring-opacity-50'
                   >
                     {themes.map((t) => (
                       <option key={t.value} value={t.value}>

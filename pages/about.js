@@ -57,7 +57,7 @@ export default function AboutPage() {
                   <h6 className='mb-5 font-sans text-lg font-medium tracking-wider uppercase md:text-xl'>
                     About
                   </h6>
-                  <h2 className='font-serif text-3xl font-bold text-transparent md:text-4xl lg:text-5xl bg-clip-text bg-gradient-to-br from-primary-700 via-primary-500 to-primary-300 dark:from-primary-300 dark:via-primary-500 dark:to-primary-700'>
+                  <h2 className='font-serif text-3xl font-bold text-transparent md:text-4xl lg:text-5xl bg-clip-text bg-linear-to-br from-primary-700 via-primary-500 to-primary-300 dark:from-primary-300 dark:via-primary-500 dark:to-primary-700'>
                     Ahmad Ihsan
                   </h2>
                 </div>

@@ -40,8 +40,8 @@ export default function Navbar() {
                 />
               </Link>
             </div>
-            <div className='flex-grow'></div>
-            <div className='flex-grow'>
+            <div className='grow'></div>
+            <div className='grow'>
               <ul
                 className={`${
                   isShow
