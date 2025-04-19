@@ -1,5 +1,7 @@
 module.exports = {
   images: {
-    domains: ['cdn.sanity.io'],
+    remotePatterns: [
+      new URL('https://cdn.sanity.io/images/d4bje89x/production/**'),
+    ],
   },
 };
