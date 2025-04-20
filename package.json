@@ -3,6 +3,7 @@
   "description": "A portfolio site for Ahmad Ihsan, built with Next.js and React, fetching content from the Headless CMS, Sanity.io",
   "version": "1.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
