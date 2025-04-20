@@ -1,8 +1,12 @@
 {
-  "trailingComma": "es5",
-  "tabWidth": 2,
+  "importOrder": ["^@", "^@/(.*)$", "^@payloadcms/(.*)$", "^[a-z]", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "jsxSingleQuote": true,
+  "printWidth": 100,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "semi": true,
   "singleQuote": true,
-  "jsxSingleQuote": true,
-  "printWidth": 100
+  "tabWidth": 2,
+  "trailingComma": "all"
 }
