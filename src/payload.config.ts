@@ -8,6 +8,9 @@ import { buildConfig } from 'payload';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 
+import { Footer } from './Footer/config';
+import { Header } from './Header/config';
+import { Categories } from './collections/Categories';
 import { Media } from './collections/Media';
 import { Users } from './collections/Users';
 
@@ -32,6 +35,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
+  globals: [Header, Footer],
   sharp,
   plugins: [
     payloadCloudPlugin(),
