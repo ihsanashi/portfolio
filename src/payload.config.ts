@@ -15,6 +15,8 @@ import { Media } from './collections/Media';
 import { Pages } from './collections/Pages';
 import { Posts } from './collections/Posts';
 import { Users } from './collections/Users';
+import { defaultLexical } from './fields/defaultLexical';
+import { plugins } from './plugins';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -24,6 +26,28 @@ export default buildConfig({
     user: Users.slug,
     importMap: {
       baseDir: path.resolve(dirname),
+    },
+    livePreview: {
+      breakpoints: [
+        {
+          label: 'Mobile',
+          name: 'mobile',
+          width: 375,
+          height: 667,
+        },
+        {
+          label: 'Tablet',
+          name: 'tablet',
+          width: 768,
+          height: 1024,
+        },
+        {
+          label: 'Desktop',
+          name: 'desktop',
+          width: 1440,
+          height: 900,
+        },
+      ],
     },
   },
   collections: [Categories, Media, Pages, Posts, Users],
@@ -41,6 +65,7 @@ export default buildConfig({
   sharp,
   plugins: [
     payloadCloudPlugin(),
+    ...plugins,
     // storage-adapter-placeholder
   ],
 });
