@@ -27,7 +27,7 @@
     "@payloadcms/plugin-seo": "^3.35.1",
     "@payloadcms/richtext-lexical": "^3.35.1",
     "@payloadcms/ui": "^3.35.1",
-    "@radix-ui/react-checkbox": "^1.2.2",
+    "@radix-ui/react-checkbox": "^1.2.3",
     "@radix-ui/react-label": "^2.1.4",
     "@radix-ui/react-select": "^2.2.2",
     "@radix-ui/react-slot": "^1.2.0",
@@ -37,7 +37,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "graphql": "^16.10.0",
-    "lucide-react": "^0.501.0",
+    "lucide-react": "^0.503.0",
     "moment": "^2.30.1",
     "next": "^15.3.1",
     "next-sanity-image": "^6.1.1",
@@ -47,7 +47,7 @@
     "prism-react-renderer": "^2.4.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-hook-form": "^7.56.0",
+    "react-hook-form": "^7.56.1",
     "react-icons": "^5.4.0",
     "react-portable-text": "^0.6.0",
     "sharp": "^0.34.1",
@@ -57,16 +57,23 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.4",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^22.14.1",
     "@types/react": "^19.1.2",
-    "eslint": "^9.25.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.25.1",
     "eslint-config-next": "^15.3.1",
     "eslint-plugin-import": "^2.31.0",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.3",
     "prettier": "^3.5.3",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^3.4.17"
   },
   "engines": {
     "node": "22.x"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   },
   "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
 }
