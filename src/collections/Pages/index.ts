@@ -6,6 +6,7 @@ import { FormBlock } from '@/blocks/Form/config';
 import { MediaBlock } from '@/blocks/MediaBlock/config';
 import { slugField } from '@/fields/slug';
 import { hero } from '@/heros/config';
+import { populatePublishedAt } from '@/hooks/populatePublishedAt';
 import { generatePreviewPath } from '@/utilities/generatePreviewPath';
 import {
   MetaDescriptionField,
@@ -17,6 +18,8 @@ import {
 
 import { CollectionConfig } from 'payload';
 
+import { revalidateDelete, revalidatePage } from './hooks/revalidatePage';
+
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
   access: {
@@ -25,6 +28,9 @@ export const Pages: CollectionConfig<'pages'> = {
     delete: authenticated,
     read: authenticatedOrPublished,
   },
+  // This config controls what's populated by default when a page is referenced
+  // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
+  // Type safe if the collection slug generic is passed to `CollectionConfig` - `CollectionConfig<'pages'>
   defaultPopulate: {
     title: true,
     slug: true,
@@ -115,7 +121,11 @@ export const Pages: CollectionConfig<'pages'> = {
     },
     ...slugField(),
   ],
-  hooks: {},
+  hooks: {
+    afterChange: [revalidatePage],
+    beforeChange: [populatePublishedAt],
+    afterDelete: [revalidateDelete],
+  },
   versions: {
     drafts: {
       autosave: {
