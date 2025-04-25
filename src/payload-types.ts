@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     pages: Page;
     posts: Post;
+    projects: Project;
     users: User;
     redirects: Redirect;
     forms: Form;
@@ -87,6 +88,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
@@ -729,6 +731,79 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  title: string;
+  media?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  summary?: string | null;
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  startDate: string;
+  isOngoing?: boolean | null;
+  endDate?: string | null;
+  tags?: string[] | null;
+  technologies?: string[] | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -914,6 +989,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
       } | null)
     | ({
         relationTo: 'users';
@@ -1256,6 +1335,54 @@ export interface PostsSelect<T extends boolean = true> {
       };
   slug?: T;
   slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  title?: T;
+  media?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  summary?: T;
+  body?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  slug?: T;
+  slugLock?: T;
+  startDate?: T;
+  isOngoing?: T;
+  endDate?: T;
+  tags?: T;
+  technologies?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -1650,6 +1777,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'posts';
           value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'projects';
+          value: number | Project;
         } | null);
     global?: string | null;
     user?: (number | null) | User;

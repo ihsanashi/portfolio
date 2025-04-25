@@ -12,6 +12,7 @@ import { Categories } from './collections/Categories';
 import { Media } from './collections/Media';
 import { Pages } from './collections/Pages';
 import { Posts } from './collections/Posts';
+import { Projects } from './collections/Projects';
 import { Users } from './collections/Users';
 import { defaultLexical } from './fields/defaultLexical';
 import { plugins } from './plugins';
@@ -56,7 +57,7 @@ export default buildConfig({
       ],
     },
   },
-  collections: [Categories, Media, Pages, Posts, Users],
+  collections: [Categories, Media, Pages, Posts, Projects, Users],
   editor: defaultLexical,
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
