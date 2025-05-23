@@ -59,7 +59,7 @@ export default async function Page({ params: paramsPromise }: Args) {
   const { hero, layout } = page;
 
   return (
-    <article className='pt-16 pb-24'>
+    <main className='pb-24 pt-16'>
       <PageClient />
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />
@@ -68,7 +68,7 @@ export default async function Page({ params: paramsPromise }: Args) {
 
       <RenderHero {...hero} />
       <RenderBlocks blocks={layout} />
-    </article>
+    </main>
   );
 }
 

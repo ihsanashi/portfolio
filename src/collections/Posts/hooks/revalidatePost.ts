@@ -1,5 +1,8 @@
 import { revalidatePath, revalidateTag } from 'next/cache';
-import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from 'payload';
+import type {
+  CollectionAfterChangeHook,
+  CollectionAfterDeleteHook,
+} from 'payload';
 
 import type { Post } from '../../../payload-types';
 
@@ -31,7 +34,10 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
   return doc;
 };
 
-export const revalidateDelete: CollectionAfterDeleteHook<Post> = ({ doc, req: { context } }) => {
+export const revalidateDelete: CollectionAfterDeleteHook<Post> = ({
+  doc,
+  req: { context },
+}) => {
   if (!context.disableRevalidate) {
     const path = `/posts/${doc?.slug}`;
 
