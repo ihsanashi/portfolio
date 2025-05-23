@@ -1,7 +1,6 @@
 import { authenticated, authenticatedOrPublished } from '@/access';
 import { linkGroup } from '@/fields/linkGroup';
 import { slugField } from '@/fields/slug';
-import { hero } from '@/heros/config';
 import { generatePreviewPath } from '@/utilities/generatePreviewPath';
 import {
   MetaDescriptionField,
