@@ -16,6 +16,7 @@ import { Projects } from './collections/Projects';
 import { Users } from './collections/Users';
 import { defaultLexical } from './fields/defaultLexical';
 import { plugins } from './plugins';
+import { getServerSideURL } from './utilities/getURL';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -58,8 +59,9 @@ export default buildConfig({
     },
   },
   collections: [Categories, Media, Pages, Posts, Projects, Users],
+  cors: [getServerSideURL()].filter(Boolean),
   editor: defaultLexical,
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: process.env.PAYLOAD_SECRET,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
