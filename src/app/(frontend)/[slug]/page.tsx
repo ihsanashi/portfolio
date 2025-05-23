@@ -47,11 +47,10 @@ export default async function Page({ params: paramsPromise }: Args) {
   const { slug = 'home' } = await paramsPromise;
   const url = '/' + slug;
 
-  let page: RequiredDataFromCollectionSlug<'pages'> | null;
-
-  page = await queryPageBySlug({
-    slug,
-  });
+  const page: RequiredDataFromCollectionSlug<'pages'> | null =
+    await queryPageBySlug({
+      slug,
+    });
 
   if (!page) {
     return <PayloadRedirects url={url} />;
@@ -73,7 +72,9 @@ export default async function Page({ params: paramsPromise }: Args) {
   );
 }
 
-export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+export async function generateMetadata({
+  params: paramsPromise,
+}: Args): Promise<Metadata> {
   const { slug = 'home' } = await paramsPromise;
   const page = await queryPageBySlug({
     slug,
