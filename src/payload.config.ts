@@ -15,6 +15,7 @@ import { Posts } from './collections/Posts';
 import { Projects } from './collections/Projects';
 import { Users } from './collections/Users';
 import { defaultLexical } from './fields/defaultLexical';
+import { migrations } from './migrations';
 import { plugins } from './plugins';
 import { getServerSideURL } from './utilities/getURL';
 
@@ -69,6 +70,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },
+    prodMigrations: migrations,
   }),
   globals: [Header, Footer],
   sharp,
