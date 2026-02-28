@@ -1,16 +1,19 @@
 {
-	"main": "dist/_worker.js/index.js",
-	"name": "portfolio",
+  "main": "dist/_worker.js/index.js",
+  "name": "portfolio",
   "compatibility_date": "2026-02-28",
-  "compatibility_flags": [
-    "nodejs_compat",
-    "global_fetch_strictly_public"
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+  },
+  "observability": {
+    "enabled": true,
+  },
+  "routes": [
+    {
+      "pattern": "ahmadihsan.com",
+      "custom_domain": true,
+    },
   ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
-	"observability": {
-    "enabled": true
-  }
 }
