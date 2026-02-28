@@ -1,0 +1,8 @@
+---
+import Link from './Link.astro';
+import { SOCIAL_LINKS } from '.';
+---
+
+<section class='flex items-center justify-center space-x-2'>
+  {SOCIAL_LINKS.map((link) => <Link link={link} />)}
+</section>
