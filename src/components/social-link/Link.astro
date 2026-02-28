@@ -1,0 +1,18 @@
+---
+import { Button } from '@/components/ui/button';
+import type { TSocialLink } from '.';
+
+type Props = {
+  link: TSocialLink;
+};
+
+const { link } = Astro.props;
+const { href, icon: Icon, label, target } = link;
+---
+
+<a href={href} target={target}>
+  <Button size='sm' variant='ghost'>
+    <Icon size={16} />
+    {label}
+  </Button>
+</a>
