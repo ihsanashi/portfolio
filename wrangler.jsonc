@@ -1,6 +1,6 @@
 {
 	"main": "dist/_worker.js/index.js",
-	"name": "ahmadihsan-portfolio",
+	"name": "portfolio",
   "compatibility_date": "2026-02-28",
   "compatibility_flags": [
     "nodejs_compat",
