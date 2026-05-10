@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
-import illustration from '../../public/under-maintenance.svg';
-import { Image } from 'astro:assets';
+import UnderMaintenanceIllustration from '@/assets/under-maintenance.svg';
 import Links from '@/components/social-link/Links.astro';
 
 const buildYear = new Date().getFullYear();
@@ -14,22 +13,20 @@ const buildYear = new Date().getFullYear();
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>Home | Ahmad Ihsan</title>
+    <script
+      defer
+      src='https://umami.umami.orb.local/script.js'
+      data-website-id='a37d9c03-5f2e-40dd-b7b4-f1ef6d6111bd'></script>
   </head>
   <body>
     <main class='container flex flex-col space-y-5 py-5'>
       <section class='flex flex-col items-center space-y-4'>
-        <Image
-          alt='illustration for under maintenance'
-          height={300}
-          width={300}
-          src={illustration}
-        />
+        <UnderMaintenanceIllustration height={300} width={300} />
         <div class='text-center max-w-lg'>
           <h3 class='text-xl text-gray-900 pb-2'>Under maintenance, be back soon!</h3>
           <p class='text-gray-600'>
-            Hey there, Ihsan here. I'm currently working on revamping this site to include other
-            aspects of my life, not just focusing on my career. If you'd like to get in touch, feel
-            free to reach out via the following links.
+            Hey there, Ihsan here. I'm currently working on revamping this site. If you'd like to
+            get in touch, feel free to reach out via the following links.
           </p>
         </div>
       </section>
@@ -41,7 +38,7 @@ const buildYear = new Date().getFullYear();
       <p class='text-gray-500 text-sm'>
         &copy; {buildYear} Ahmad Ihsan. All rights reserved.
       </p>
-      <p class='text-gray-400 text-sm'>
+      <p class='text-gray-400 text-xs'>
         Illustration by <a href='https://storyset.com/work' target='_blank'>Storyset</a>
       </p>
     </footer>

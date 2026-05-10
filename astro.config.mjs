@@ -8,8 +8,14 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        '@/assets': '/src/assets',
+      },
+    },
   },
 
   integrations: [react()],
