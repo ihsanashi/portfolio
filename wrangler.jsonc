@@ -1,11 +1,10 @@
 {
-  "main": "dist/_worker.js/index.js",
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "name": "portfolio",
-  "compatibility_date": "2026-02-28",
+  "compatibility_date": "2026-04-21",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "binding": "ASSETS",
-    "directory": "./dist",
   },
   "observability": {
     "enabled": true,
